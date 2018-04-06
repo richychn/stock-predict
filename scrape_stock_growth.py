@@ -45,7 +45,7 @@ def growth_calculate(second, first):
   return (second - first)/first
 
 def main():
-  print scrape_stock_growth("BABA")
+  print (scrape_stock_growth("BABA"))
 
 if __name__ == "__main__":
     main()  # hike!
