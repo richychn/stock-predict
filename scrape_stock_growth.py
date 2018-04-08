@@ -31,8 +31,6 @@ def calculate_price_growth(stock_prices):
     if key - 1 in stock_prices:
       stock_growth[key] = growth_calculate(
         stock_prices[key], stock_prices[key-1])
-  # early = min(stock_growth.keys())
-  # del stock_growth[early]
   return stock_growth
 
 def scrape_stock_growth(symbol):
