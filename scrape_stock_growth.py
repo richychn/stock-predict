@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import datetime
 from decimal import *
 
-def get_stock_page(symbol):
+def get_stock_price_page(symbol):
   url = "https://finance.yahoo.com/quote/" + symbol \
       + "/history?period1=1325404800&period2=1514793600&" \
       + "interval=1mo&filter=history&frequency=1mo"
@@ -25,7 +25,7 @@ def find_stock_prices(soup):
       stock_prices[year] = price
   return stock_prices
 
-def calculate_growth(stock_prices):
+def calculate_price_growth(stock_prices):
   stock_growth = {}
   for key in stock_prices:
     if key - 1 in stock_prices:
@@ -36,9 +36,9 @@ def calculate_growth(stock_prices):
   return stock_growth
 
 def scrape_stock_growth(symbol):
-  soup = get_stock_page(symbol)
+  soup = get_stock_price_page(symbol)
   stock_prices = find_stock_prices(soup)
-  stock_growth = calculate_growth(stock_prices)
+  stock_growth = calculate_price_growth(stock_prices)
   return stock_growth
 
 def growth_calculate(second, first):
