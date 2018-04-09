@@ -44,7 +44,7 @@ def extract_features(symbol, yrs_dict):
                 f_add = page.as_matrix()[:,yp].tolist()
                 feature_list.extend(f_add)
             return_dict[y] = feature_list
-        return_dict = clean_dict(return_dict)
+        clean_dict(return_dict)
         return return_dict
 
 def clean(f_list):
@@ -70,9 +70,8 @@ def main():
 
     kr = gm.KeyRatiosDownloader()
     yrs_dict = {2014:1,2015:2,2016:3,2017:4}
-    Apple_features = extract_features('NVDA', yrs_dict)
-    final_dict = clean_dict(Apple_features)
-    print(final_dict)
+    Apple_features = extract_features('AAPL', yrs_dict)
+    print(Apple_features)
 
 if __name__ == "__main__":
     main()  # hike!
