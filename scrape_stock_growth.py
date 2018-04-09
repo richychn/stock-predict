@@ -8,7 +8,6 @@ def get_stock_price_page(symbol):
       + "/history?period1=1325404800&period2=1514793600&" \
       + "interval=1mo&filter=history&frequency=1mo"
   response = requests.get(url)
-
   if response.status_code != 404:
     soup = BeautifulSoup(response.text, "lxml")
 
@@ -19,10 +18,12 @@ def find_stock_prices(soup):
   this_year = datetime.datetime.now().year
   table = soup.find('tbody')
   for row in table.find_all('tr'):
-    year = int(row.find_all('span')[0].text[-4:])
-    price = Decimal(row.find_all('span')[4].text)
-    if year not in stock_prices and year != this_year:
-      stock_prices[year] = price
+    spans = row.find_all('span')
+    if len(spans) == 7:
+      year = int(row.find_all('span')[0].text[-4:])
+      price = Decimal(row.find_all('span')[4].text)
+      if year not in stock_prices and year != this_year:
+        stock_prices[year] = price
   return stock_prices
 
 def calculate_price_growth(stock_prices):

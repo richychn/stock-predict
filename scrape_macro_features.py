@@ -5,7 +5,7 @@ import numpy
 import decimal
 from bs4 import BeautifulSoup
 
-def get_observation_ur(industry, year):
+def get_ur(industry, year):
   key = "89c89a90854ea7514f605a1af848a7f6"
   series = ur_industries(industry)
   url = "https://api.stlouisfed.org/fred/series/observations?series_id=" \
@@ -20,7 +20,7 @@ def get_observation_ur(industry, year):
       count += 1
   return ret / count
 
-def get_observation_gdp(industry, year):
+def get_gdp(industry, year):
   key = "89c89a90854ea7514f605a1af848a7f6"
   series = ur_industries(industry)
   url = "https://api.stlouisfed.org/fred/series/observations?series_id=" \
@@ -63,7 +63,7 @@ def gdp_industries(industry):
   return industries[industry]
 
 def main():
-  print(get_observation_gdp("mining", 2009))
+  print(get_gdp("mining", 2009))
 
 if __name__ == "__main__":
     main()  # hike!
