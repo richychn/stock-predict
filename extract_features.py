@@ -44,6 +44,7 @@ def extract_features(symbol, yrs_dict):
                 f_add = page.as_matrix()[:,yp].tolist()
                 feature_list.extend(f_add)
             return_dict[y] = feature_list
+        return_dict = clean_dict(return_dict)
         return return_dict
 
 def clean(f_list):
