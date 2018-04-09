@@ -12,11 +12,18 @@ def list_of_rows(industry):
   rows = []
   for comp in test_industry(industry):
     stock_growths = ssg.scrape_stock_growth(comp)
-    for year in stock_growths:
-      ur = smf.get_ur(industry, year)
+    ratios = esr.extract_features(comp, stock_growths)
+    for year in ratios:
+      if industry == 'wholesale' || industry == 'retail':
+        ur = smf.get_ur('trade', year)
+      else:
+        ur = smf.get_ur(industry, year)
       gdp = smf.get_gdp(industry, year)
-      growth = stock_growths[year]
-      row = [comp, year, ur, gdp, growth]
+      ratio = ratios[year]
+      growth = stock_growths[year + 1]
+      row = [comp, year, ur, gdp]
+      row.extend(ratio)
+      row.append(growth)
       rows.append(row)
   return rows
 
@@ -26,5 +33,3 @@ def create_industry_csv(industry, filename):
   for row in list_of_rows(industry):
       filewriter.writerow( row )
   csvfile.close()
-
-create_industry_csv('finance', 'finance.csv')
