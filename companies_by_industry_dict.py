@@ -49,100 +49,124 @@ def dic_to_2darrays(dic):
         list_of_rows += [[key,dic.get(key)]]
     return list_of_rows
 
-### New Methods 
-def get_subsector_names(filename, subsector_list):
+# ### New Methods 
+# def get_subsector_names(filename, subsector_list):
+#     """
+#     """
+#     #subsector_list = []
+#     allRows = readcsv(filename)
+#     allComps = allRows[1:]
+#     for comp in allComps:
+#         subsector = comp[6] #7 for industry csv
+#         if subsector not in subsector_list:
+#             subsector_list.append(subsector)
+
+# def generate_subsectorList_csv():
+#     """
+#     """
+#     subsector_list = []
+#     get_subsector_names("NASDAQALL.csv", subsector_list)
+#     get_subsector_names("NYSEALL.csv", subsector_list)
+#     get_subsector_names("AMEXALL.csv", subsector_list)
+#     final_subsector_list = []
+#     for sub in subsector_list:
+#         final_subsector_list.append([sub])
+#     write_to_csv(final_subsector_list, "subsectorList.csv")
+
+# def generate_subsector_dict(filename):
+#     """
+#     """
+#     subsector_dict = {}
+#     sub_and_ind = readcsv(filename)
+#     for line in sub_and_ind:
+#         sub_name = line[0]
+#         ind_name = line[1]
+#         if (ind_name not in subsector_dict.keys()):
+#             subsector_dict[ind_name] = []
+#         subsector_dict[ind_name].append(sub_name)
+#     return subsector_dict
+
+
+# #manual step: categorize what subsectors fall under what FRED Industires 
+# #return a dictionary of Fred industries as keys, and corresponding subsectors as key values 
+# def locate_industry(subsector_dict, comp_sub):
+#     """
+#     """
+#     for industry_name in subsector_dict:
+#         if (comp_sub in subsector_dict[industry_name]):
+#             return industry_name
+#     return False
+
+# def generate_final_dict(subsector_dict):
+#     """
+#     """
+#     final_dict = {}
+#     for key in subsector_dict:
+#         final_dict[key] = []
+#     return final_dict
+
+# example_sd = {"manufacturing": ["Industrial Machinery/Components", "Major Pharmaceuticals"],
+#     "finance": ["Oil Refining/Marketing"],
+#     "agriculture":["Diversified Commercial Services"],
+#     "n/a":["n/a"]}
+
+# def final_dict_helper(subsector_dict, industry_csv, final_dict):
+#     """
+#     """
+#     allRows = readcsv(industry_csv)
+#     allComps = allRows[1:]
+#     for comp in allComps:
+#         comp_sub = comp[6] # for industry csv
+#         industry_belong = locate_industry(subsector_dict, comp_sub)
+#         if (industry_belong != False):
+#             comp_symbol = comp[0]
+#             final_dict[industry_belong].append(comp_symbol)
+#     #return final_dict
+# #use final_dict_helper(example_sd, "example_industry.csv", finalD) and uncomment final_dict to test final_dict_helper
+# def final_industry_dict(subsector_dict):
+#     """
+#     """
+#     final_dict = generate_final_dict(subsector_dict)
+#     # final_dict_helper(subsector_dict, "Finance.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "BasicIndustry.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "HealthCare.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Miscellaneous.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "PublicUtilities.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Technology.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Transporation.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Capital_Goods.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Consumer_nondurables.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Consumer_Services.csv", final_dict)
+#     # final_dict_helper(subsector_dict, "Energy.csv", final_dict)
+#     final_dict_helper(subsector_dict, "NASDAQALL.csv", final_dict)
+#     final_dict_helper(subsector_dict, "NYSEALL.csv", final_dict)
+#     final_dict_helper(subsector_dict, "AMEXALL.csv", final_dict)
+
+#     return final_dict
+
+def final_dict_helper(csv, final_dict):
     """
     """
-    #subsector_list = []
-    allRows = readcsv(filename)
-    allComps = allRows[1:]
+    allRows = readcsv(csv)
+    allComps = allRows[1:] #all observations 
     for comp in allComps:
-        subsector = comp[6] #7 for industry csv
-        if subsector not in subsector_list:
-            subsector_list.append(subsector)
+        comp_symbol = comp[0]
+        comp_ind = comp[5] # for industry csv
+        if (comp_ind not in final_dict.keys()):
+            final_dict[comp_ind] = []
+            final_dict[comp_ind].append(comp_symbol)
+        else:
+            final_dict[comp_ind].append(comp_symbol)
+    
+def final_industry_dict():
+    """
+    """
+    final_industry_dict = []
+    final_dict_helper("NASDAQALL.csv", final_industry_dict)
+    final_dict_helper("NYSEALL.csv", final_industry_dict)
+    final_dict_helper("AMEXALL.csv", final_industry_dict)
 
-def generate_subsectorList_csv():
-    """
-    """
-    subsector_list = []
-    get_subsector_names("NASDAQALL.csv", subsector_list)
-    get_subsector_names("NYSEALL.csv", subsector_list)
-    get_subsector_names("AMEXALL.csv", subsector_list)
-    final_subsector_list = []
-    for sub in subsector_list:
-        final_subsector_list.append([sub])
-    write_to_csv(final_subsector_list, "subsectorList.csv")
-
-def generate_subsector_dict(filename):
-    """
-    """
-    subsector_dict = {}
-    sub_and_ind = readcsv(filename)
-    for line in sub_and_ind:
-        sub_name = line[0]
-        ind_name = line[1]
-        if (ind_name not in subsector_dict.keys()):
-            subsector_dict[ind_name] = []
-        subsector_dict[ind_name].append(sub_name)
-    return subsector_dict
-
-
-#manual step: categorize what subsectors fall under what FRED Industires 
-#return a dictionary of Fred industries as keys, and corresponding subsectors as key values 
-def locate_industry(subsector_dict, comp_sub):
-    """
-    """
-    for industry_name in subsector_dict:
-        if (comp_sub in subsector_dict[industry_name]):
-            return industry_name
-    return False
-
-def generate_final_dict(subsector_dict):
-    """
-    """
-    final_dict = {}
-    for key in subsector_dict:
-        final_dict[key] = []
-    return final_dict
-
-example_sd = {"manufacturing": ["Industrial Machinery/Components", "Major Pharmaceuticals"],
-    "finance": ["Oil Refining/Marketing"],
-    "agriculture":["Diversified Commercial Services"],
-    "n/a":["n/a"]}
-
-def final_dict_helper(subsector_dict, industry_csv, final_dict):
-    """
-    """
-    allRows = readcsv(industry_csv)
-    allComps = allRows[1:]
-    for comp in allComps:
-        comp_sub = comp[6] # for industry csv
-        industry_belong = locate_industry(subsector_dict, comp_sub)
-        if (industry_belong != False):
-            comp_symbol = comp[0]
-            final_dict[industry_belong].append(comp_symbol)
-    #return final_dict
-#use final_dict_helper(example_sd, "example_industry.csv", finalD) and uncomment final_dict to test final_dict_helper
-def final_industry_dict(subsector_dict):
-    """
-    """
-    final_dict = generate_final_dict(subsector_dict)
-    # final_dict_helper(subsector_dict, "Finance.csv", final_dict)
-    # final_dict_helper(subsector_dict, "BasicIndustry.csv", final_dict)
-    # final_dict_helper(subsector_dict, "HealthCare.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Miscellaneous.csv", final_dict)
-    # final_dict_helper(subsector_dict, "PublicUtilities.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Technology.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Transporation.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Capital_Goods.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Consumer_nondurables.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Consumer_Services.csv", final_dict)
-    # final_dict_helper(subsector_dict, "Energy.csv", final_dict)
-    final_dict_helper(subsector_dict, "NASDAQALL.csv", final_dict)
-    final_dict_helper(subsector_dict, "NYSEALL.csv", final_dict)
-    final_dict_helper(subsector_dict, "AMEXALL.csv", final_dict)
-
-    return final_dict
+    return final_industry_dict
 
 
 #def main():
