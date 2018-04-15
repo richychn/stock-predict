@@ -161,7 +161,7 @@ def final_dict_helper(csv, final_dict):
 def final_industry_dict():
     """
     """
-    final_industry_dict = []
+    final_industry_dict = {}
     final_dict_helper("NASDAQALL.csv", final_industry_dict)
     final_dict_helper("NYSEALL.csv", final_industry_dict)
     final_dict_helper("AMEXALL.csv", final_industry_dict)
