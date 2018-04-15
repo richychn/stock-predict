@@ -25,11 +25,8 @@ def list_of_rows(industry):
       continue
     ratios = esr.extract_features(comp, stock_growths)
     for year in ratios:
-      if industry == 'wholesale' or industry == 'retail':
-        ur = smf.get_ur('trade', year)
-      else:
-        ur = smf.get_ur(industry, year)
-      gdp = smf.get_gdp(industry, year)
+      ur = smf.get_ur(year)
+      gdp = smf.get_gdp(year)
       ratio = ratios[year]
       growth = stock_growths[year + 1]
       row = [comp, year, ur, gdp]
@@ -39,8 +36,8 @@ def list_of_rows(industry):
         rows.append(row)
   return rows
 
-def create_industry_csv(industry, filename):
-  csvfile = open(filename, "w", newline='' )
+def create_industry_csv(industry):
+  csvfile = open(industry + ".csv", "w", newline='' )
   filewriter = csv.writer( csvfile, delimiter=",")
   for row in list_of_rows(industry):
       filewriter.writerow( row )
