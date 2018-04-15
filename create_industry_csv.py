@@ -38,9 +38,9 @@ def list_of_rows(industry):
 
 def create_industry_csv(industry):
   csvfile = open(industry + ".csv", "w", newline='' )
-  filewriter = csv.writer( csvfile, delimiter=",")
+  filewriter = csv.writer(csvfile, delimiter=",")
   for row in list_of_rows(industry):
       filewriter.writerow( row )
   csvfile.close()
 
-create_industry_csv("finance", "finance.csv")
+create_industry_csv("finance")
