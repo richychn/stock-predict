@@ -41,14 +41,6 @@ def write_to_csv( list_of_rows, filename ):
     except:
         print("File", filename, "could not be opened for writing...")
 
-def dic_to_2darrays(dic):
-    """return a 2d array converted from a dictionary 
-    """
-    list_of_rows = []
-    for key in dic:
-        list_of_rows += [[key,dic.get(key)]]
-    return list_of_rows
-
 # ### New Methods 
 # def get_subsector_names(filename, subsector_list):
 #     """
@@ -168,9 +160,20 @@ def final_industry_dict():
 
     return final_industry_dict
 
+def dic_to_2darrays(dic):
+    """return a 2d array converted from a dictionary 
+    """
+    list_of_rows = []
+    for key in dic:
+        list_of_rows += [[key,dic.get(key)]]
+    return list_of_rows
 
-#def main():
- #   """ run this file as a script """
+def main():
+    """ run this file as a script """
+    final_dict = final_industry_dict()
+    file_array = dic_to_2darrays(final_dict)
+    write_to_csv( file_array, "industry_company.csv")
+
     
 
 
