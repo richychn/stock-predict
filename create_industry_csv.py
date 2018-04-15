@@ -1,20 +1,31 @@
 import extract_stock_ratios as esr
 import scrape_macro_features as smf
 import scrape_stock_growth as ssg
+import math
 import csv
 
 def test_industry(industry):
-  dictionary = {'finance': ['PIH', 'PIHPP', 'TURN', 'FCCY', 'SRCE', 'ABM'],
+  dictionary = {'finance': ['PIH', 'PIHPP', 'DYTL', 'FCCY', 'SRCE', 'ABM'],
                 'transportation': ['AIRT', 'ATSG', 'ALK', 'AAL', 'ARCB']}
   return dictionary[industry]
+
+def check_na(array):
+  count = 0
+  for el in array:
+    if math.isnan(float(el)):
+      count += 1
+  return count
 
 def list_of_rows(industry):
   rows = []
   for comp in test_industry(industry):
-    stock_growths = ssg.scrape_stock_growth(comp)
+    try:
+      stock_growths = ssg.scrape_stock_growth(comp)
+    except:
+      continue
     ratios = esr.extract_features(comp, stock_growths)
     for year in ratios:
-      if industry == 'wholesale' || industry == 'retail':
+      if industry == 'wholesale' or industry == 'retail':
         ur = smf.get_ur('trade', year)
       else:
         ur = smf.get_ur(industry, year)
@@ -24,7 +35,8 @@ def list_of_rows(industry):
       row = [comp, year, ur, gdp]
       row.extend(ratio)
       row.append(growth)
-      rows.append(row)
+      if check_na(ratio) < 15: # change NA limit here
+        rows.append(row)
   return rows
 
 def create_industry_csv(industry, filename):
@@ -33,3 +45,5 @@ def create_industry_csv(industry, filename):
   for row in list_of_rows(industry):
       filewriter.writerow( row )
   csvfile.close()
+
+create_industry_csv("finance", "finance.csv")
