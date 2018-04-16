@@ -1,12 +1,12 @@
 import extract_stock_ratios as esr
 import scrape_macro_features as smf
 import scrape_stock_growth as ssg
+import companies_by_industry_dict as cbi
 import math
 import csv
 
 def test_industry(industry):
-  dictionary = {'finance': ['PIH', 'PIHPP', 'DYTL', 'FCCY', 'SRCE', 'ABM'],
-                'transportation': ['AIRT', 'ATSG', 'ALK', 'AAL', 'ARCB']}
+  dictionary = cbi.final_industry_dict()
   return dictionary[industry]
 
 def check_na(array):
@@ -21,9 +21,9 @@ def list_of_rows(industry):
   for comp in test_industry(industry):
     try:
       stock_growths = ssg.scrape_stock_growth(comp)
+      ratios = esr.extract_features(comp, stock_growths)
     except:
       continue
-    ratios = esr.extract_features(comp, stock_growths)
     for year in ratios:
       ur = smf.get_ur(year)
       gdp = smf.get_gdp(year)
@@ -43,4 +43,8 @@ def create_industry_csv(industry):
       filewriter.writerow( row )
   csvfile.close()
 
-create_industry_csv("finance")
+# create_industry_csv("Finance")
+test_industry("Finance")
+
+for ind in cbi.final_industry_dict().keys():
+  create_industry_csv(ind)
