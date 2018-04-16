@@ -19,10 +19,12 @@ def check_na(array):
 def list_of_rows(industry):
   rows = []
   for comp in test_industry(industry):
+    print(len(rows))
     try:
       stock_growths = ssg.scrape_stock_growth(comp)
       ratios = esr.extract_features(comp, stock_growths)
     except:
+      print("error")
       continue
     for year in ratios:
       ur = smf.get_ur(year)
@@ -44,7 +46,10 @@ def create_industry_csv(industry):
   csvfile.close()
 
 # create_industry_csv("Finance")
-test_industry("Finance")
+# test_industry("Finance")
 
-for ind in cbi.final_industry_dict().keys():
-  create_industry_csv(ind)
+# for ind in cbi.final_industry_dict().keys():
+#   create_industry_csv(ind)
+  # print(ind)
+
+create_industry_csv("Public Utilities")
