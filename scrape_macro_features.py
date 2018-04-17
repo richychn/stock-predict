@@ -31,6 +31,19 @@ def get_gdp(year):
       ret += decimal.Decimal(ob['value'])
   return ret
 
+def use_macro_csv(year):
+  csvfile = open("MacroFeatures.csv", "w", newline='' )
+  csvrows = csv.reader( csvfile )
+  all_rows = {}
+  for row in csvrows:
+      all_rows[row[0]] = row[1:]
+  if year in all_rows.keys():
+    return all_rows[year]
+  else:
+    filewriter = csv.writer(csvfile, delimiter=",")
+    filewriter.writerow( [year, get_ur(year), get_gdp(year)] )
+  csvfile.close()
+
 def main():
   print(get_ur(2017))
   print(get_gdp(2017))

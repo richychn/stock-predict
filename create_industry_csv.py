@@ -4,6 +4,7 @@ import scrape_stock_growth as ssg
 import companies_by_industry_dict as cbi
 import math
 import csv
+from multiprocessing import Process
 
 def test_industry(industry):
   dictionary = cbi.final_industry_dict()
@@ -38,8 +39,17 @@ def list_of_rows(industry):
         rows.append(row)
   return rows
 
+def csv_name(name):
+  ret_string = ""
+  for let in name:
+    if let.isalpha():
+      ret_string = ret_string + let
+    elif let.isspace():
+      ret_string = ret_string + "-"
+  return ret_string
+
 def create_industry_csv(industry):
-  csvfile = open(industry + ".csv", "w", newline='' )
+  csvfile = open("IndustryResults/" + csv_name(industry), "w", newline='' )
   filewriter = csv.writer(csvfile, delimiter=",")
   for row in list_of_rows(industry):
       filewriter.writerow( row )
@@ -52,4 +62,5 @@ def create_industry_csv(industry):
 #   create_industry_csv(ind)
   # print(ind)
 
-create_industry_csv("Public Utilities")
+create_industry_csv("Health Care")
+
