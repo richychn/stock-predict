@@ -3,6 +3,7 @@ import string
 import json
 import numpy
 import decimal
+import csv
 from bs4 import BeautifulSoup
 
 def get_ur(year):
@@ -32,7 +33,7 @@ def get_gdp(year):
   return ret
 
 def use_macro_csv(year):
-  csvfile = open("MacroFeatures.csv", "w", newline='' )
+  csvfile = open("MacroFeatures.csv", newline='' )
   csvrows = csv.reader( csvfile )
   all_rows = {}
   for row in csvrows:
@@ -40,13 +41,14 @@ def use_macro_csv(year):
   if year in all_rows.keys():
     return all_rows[year]
   else:
+    csvfile = open("MacroFeatures.csv", "w", newline='' )
     filewriter = csv.writer(csvfile, delimiter=",")
     filewriter.writerow( [year, get_ur(year), get_gdp(year)] )
   csvfile.close()
+  return use_macro_csv(year)
 
 def main():
-  print(get_ur(2017))
-  print(get_gdp(2017))
+  print(use_macro_csv("2015"))
 
 if __name__ == "__main__":
     main()  # hike!

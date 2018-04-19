@@ -34,17 +34,38 @@ def calculate_price_growth(stock_prices):
         stock_prices[key], stock_prices[key-1])
   return stock_growth
 
+def categorize_price_growth(stock_growth):
+  categories = {}
+  for year in stock_growth:
+    categories[year] = define_category(stock_growth[year])
+  return categories
+
 def scrape_stock_growth(symbol):
   soup = get_stock_price_page(symbol)
   stock_prices = find_stock_prices(soup)
   stock_growth = calculate_price_growth(stock_prices)
-  return stock_growth
+  growth_categories = categorize_price_growth(stock_growth)
+  return growth_categories
 
 def growth_calculate(second, first):
   return (second - first)/first
 
+def define_category(growth):
+  if growth < -1:
+    return 0
+  elif growth < -0.2:
+    return 1
+  elif growth < 0:
+    return 2
+  elif growth < 0.2:
+    return 3
+  elif growth < 1:
+    return 4
+  else:
+    return 5
+
 def main():
-  print (scrape_stock_growth("DYTL"))
+  print (scrape_stock_growth("BUFF"))
 
 if __name__ == "__main__":
     main()  # hike!
