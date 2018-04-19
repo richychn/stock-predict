@@ -4,6 +4,7 @@
 
 import numpy as np            
 import pandas as pd
+import math
 
 from sklearn import tree      # for decision trees
 from sklearn import ensemble  # for random forests
@@ -20,15 +21,10 @@ except ImportError:
 print("+++ Start of pandas' datahandling +++\n")
 
 # df is a "dataframe":
-df = pd.read_csv('IndustryResults/Consumer_Non-Durables.csv', header=0)   # read the file w/header row #0
+df = pd.read_csv('IndustryResults/Technology.csv', header=0)   # read the file w/header row #0
 #see how many rows are there before cleansing  Consumer_Non-Durables
 df.head()                                 
 df.info()                                 
-
-df = df.dropna()#(axis=1, how='any')# drop unfilled data
-#see how many rows are there afterwards 
-df.head()                                 
-df.info()
 
 #feeature engineering would occur here (in the future):
 def transform_target(s):
@@ -66,7 +62,24 @@ def transform_simple(x):
     else:
         return -1
 
+
 df['growth_rate'] = df['growth_rate'].map(transform_simple)
+
+#### fill in panda for unfilled feature
+fill = []
+for i in range(1,27):
+    feature_name = "f"+str(i)
+    column_sum = df[feature_name].sum(skipna=True)
+    column_count = df[feature_name].count()
+    column_ave = column_sum / column_count
+    fill.append(column_ave)
+print(fill)
+#print(len(fill))
+###
+#df = df.dropna()#(axis=1, how='any')# drop unfilled data
+#see how many rows are there afterwards 
+#df.head()                                 
+#df.info()
 
 
 print("\n+++ End of pandas +++\n")
@@ -79,9 +92,20 @@ print("     +++++ Decision Trees +++++\n\n")
 X_all = df.iloc[:,2:28].values   
 y_all = df["growth_rate"].values 
 
+for i in range(X_all.shape[1]):
+    col = X_all[:,i]
+    for n in range(len(col)):
+        if (math.isnan(col[n])):
+            col[n] = fill[i]
+
+#to test 
+# test = pd.DataFrame(X_all)
+# df = test.dropna()
+# test.head() 
+# test.info()
 
 
-split = 30 #split the dataset into testing and training (number of split is arbitrary)
+split = 100 #split the dataset into testing and training (number of split is arbitrary)
 
 X_labeled = X_all[split:,:]  # Marking where I want to start my training data 
 y_labeled = y_all[split:]    
@@ -119,7 +143,7 @@ for max_depth in range(1,20): #looping through max_depth to find the optimal
     #
     # cross-validate to tune our model (this week, all-at-once)
     #
-    scores = cross_val_score(dtree, X_train, y_train, cv=2)
+    scores = cross_val_score(dtree, X_train, y_train, cv=5)
     average_cv_score_DT = scores.mean()
 
     #using scores:
