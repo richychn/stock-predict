@@ -28,8 +28,8 @@ def list_of_rows(industry):
       print("error")
       continue
     for year in ratios:
-      ur = smf.get_ur(year)
-      gdp = smf.get_gdp(year)
+      ur = smf.use_macro_csv(year)[0]
+      gdp = smf.use_macro_csv(year)[1]
       ratio = ratios[year]
       growth = stock_growths[year + 1]
       row = [comp, year, ur, gdp]
@@ -42,7 +42,7 @@ def list_of_rows(industry):
 def csv_name(name):
   ret_string = ""
   for let in name:
-    if let.isalpha():
+    if let.isalpha() or let == "-":
       ret_string = ret_string + let
     elif let.isspace():
       ret_string = ret_string + "-"
@@ -62,5 +62,5 @@ def create_industry_csv(industry):
 #   create_industry_csv(ind)
   # print(ind)
 
-create_industry_csv("Health Care")
+create_industry_csv("Consumer Non-Durables")
 
