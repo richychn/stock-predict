@@ -4,6 +4,8 @@ import scrape_macro_features as smf
 import scrape_stock_growth as ssg
 import companies_by_industry_dict as cbi
 import create_industry_csv as cic
+import randomforest2 as rf
+
 import csv
 import numpy as np
 import datetime
@@ -21,12 +23,12 @@ def checkComp(comp):
             return True, ind
     return False
 
-def intro(comp):
-    is_here, industry = checkComp(comp)
-    if (is_here):
-        return industry
-    else:
-        return "Job Terminated: Company not found in dataset"
+# def intro(comp):
+#     is_here, industry = checkComp(comp)
+#     if (is_here):
+#         return industry
+#     else:
+#         return "Job Terminated: Company not found in dataset"
 
 def gather_predict_data(comp):
     """
@@ -44,8 +46,8 @@ def gather_predict_data(comp):
     except:
       print("error")
       pass
-    ur = smf.get_ur(2017)#use_macro_csv(year)[0]
-    gdp = smf.get_gdp(2017)#use_macro_csv(year)[1]
+    ur = float(smf.get_ur(2017))#use_macro_csv(year)[0]
+    gdp = float(smf.get_gdp(2017))#use_macro_csv(year)[1]
     ratio = ratios[year-1]#[year]
     row = [comp, year-1, ur, gdp]
     #row = [comp, year-1]
@@ -53,6 +55,21 @@ def gather_predict_data(comp):
     if cic.check_na(ratio) < 15: # change NA limit here
         output.append(row)
     return output
+
+def alltogether():
+    """
+    """
+    comp = input("What is the company symbol of the company you want to predict?")
+    if (checkComp(comp)):
+        is_here, industry = checkComp(comp)
+        predict_arr = gather_predict_data(comp)
+        rf.randomforest(industry, predict_arr)
+    else:
+        print("Job Terminated: Company not found in dataset")
+    
+    
+
+
 
     
 

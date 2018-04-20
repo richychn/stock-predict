@@ -16,7 +16,7 @@ except ImportError:
 
 print("+++ Start of pandas' datahandling +++\n")
 
-def randomforest(industry):
+def randomforest(industry, prediction_data):
     path = "IndustryResults/" + industry + ".csv"
     df = pd.read_csv(path, header=0)
     df.head()                                 
@@ -135,8 +135,8 @@ def randomforest(industry):
     print("The best max_depth for Decision Tree is: ", max_depth_DT)
     print("The CV score for that max_depth is: ", max_CV_DT)
 
-    MAX_DEPTH = max_depth_DT  
-    print("\nChoosing MAX_DEPTH =", MAX_DEPTH, "\n")
+    MAX_DEPTH_DT = max_depth_DT  
+    print("\nChoosing MAX_DEPTH =", MAX_DEPTH_DT, "\n")
 
     #once Max Depth is determined, train using train data to predict testing data 
     X_test = X_all[:split,:]              
@@ -145,7 +145,7 @@ def randomforest(industry):
     y_train = y_all[split:]                 
 
     #decision-tree classifier
-    dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH)
+    dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
     dtree = dtree.fit(X_train, y_train) 
 
     #prediction
@@ -180,7 +180,8 @@ def randomforest(industry):
     print("Order:", feature_names[0:])
     print()
     print("confidence score:")
-    print(dtree.score(X_test, y_test, sample_weight=None))
+    decision_tree_score = dtree.score(X_test, y_test, sample_weight=None)
+    print(decision_tree_score)
 
     #randomforest 
     print("\n\n")
@@ -228,13 +229,13 @@ def randomforest(industry):
     y_train = y_all[split:]                  
 
     # these next lines is where the full training data is used for the model
-    MAX_DEPTH = best_max_depth
-    NUM_TREES = best_number_estimator
+    MAX_DEPTH_RF = best_max_depth
+    NUM_TREES_RF = best_number_estimator
 
     print()
-    print("Using MAX_DEPTH=", MAX_DEPTH, "and NUM_TREES=", NUM_TREES)
+    print("Using MAX_DEPTH=", MAX_DEPTH1, "and NUM_TREES=", NUM_TREES1)
     #randomforest classifier
-    rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH, n_estimators=NUM_TREES)
+    rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
     rforest = rforest.fit(X_train, y_train) 
 
     # here are some examples, printed out:
@@ -265,7 +266,19 @@ def randomforest(industry):
     # feature importances
     print("\nrforest.feature_importances_ are\n      ", rforest.feature_importances_) 
     print("Order:", feature_names[0:])
-    print(rforest.score(X_test, y_test, sample_weight=None))
+    rforest_score = rforest.score(X_test, y_test, sample_weight=None)
+    print(rforest_score)
 
-if True:
-    randomforest("Finance")
+    ###comparing decision tree and random forests
+    if (rforest_score >= decision_tree_score):
+        rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
+        rforest = rforest.fit(X_all, y_all)
+        prediction = rforest.predict(prediction_data)
+    else:
+        dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
+        dtree = dtree.fit(X_all, y_all) 
+        prediction = dtree.predict(prediction_data)
+    return prediction
+
+# if True:
+#     randomforest("Finance", prediction_data)
