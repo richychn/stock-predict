@@ -63,8 +63,10 @@ def alltogether():
     if (checkComp(comp)):
         is_here, industry = checkComp(comp)
         predict_arr = gather_predict_data(comp)
+        predict_arr[0] = predict_arr[0][2:]
         predict_arr = np.asarray(predict_arr)
-        rf.randomforest(industry, predict_arr)
+        #rf.randomforest(industry, predict_arr)
+        return predict_arr
     else:
         print("Job Terminated: Company not found in dataset")
     
