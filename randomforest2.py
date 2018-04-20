@@ -92,7 +92,7 @@ def randomforest(industry):
     # test.head() 
     # test.info()
 
-    split = 50 #split the dataset into testing and training (number of split is arbitrary)
+    split = int(len(X_all) * 0.15) #15% of the dataset are training set
 
     X_labeled = X_all[split:,:]  # Marking where I want to start my training data 
     y_labeled = y_all[split:]    
@@ -268,4 +268,4 @@ def randomforest(industry):
     print(rforest.score(X_test, y_test, sample_weight=None))
 
 if True:
-    randomforest("Transportation")
+    randomforest("Finance")
