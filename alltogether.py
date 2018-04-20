@@ -15,7 +15,6 @@ def checkComp(comp):
     the industry name the company belongs to. Else, return by saying "company"
     is not found
     """
-
     industry_dict = cbi.final_industry_dict()
     for ind in industry_dict:
         if (comp in industry_dict[ind]):
@@ -52,7 +51,6 @@ def gather_predict_data(comp):
     row.extend(ratio)
     if cic.check_na(ratio) < 15: # change NA limit here
         output.append(row)
-
     return output
 
     
