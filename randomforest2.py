@@ -44,9 +44,9 @@ def randomforest(industry):
             return 6
 
     def transform_simple(x):
-        if (x > 0.25):
+        if (x > 0.10):
             return 1
-        elif (x < 0.25 and x > -0.25):
+        elif (x < 0.10 and x > -0.10):
             return 0
         else:
             return -1
@@ -268,4 +268,4 @@ def randomforest(industry):
     print(rforest.score(X_test, y_test, sample_weight=None))
 
 if True:
-    randomforest("Capital_Goods")
+    randomforest("Transportation")
