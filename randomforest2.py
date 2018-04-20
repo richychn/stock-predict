@@ -1,16 +1,12 @@
-#
-# your own data modeling... 
-#
-
 import numpy as np            
 import pandas as pd
 import math
 
-from sklearn import tree      # for decision trees
-from sklearn import ensemble  # for random forests
+from sklearn import tree      
+from sklearn import ensemble  
 
 try: # different imports for different versions of scikit-learn
-    from sklearn.model_selection import cross_val_score   # simpler cv this week
+    from sklearn.model_selection import cross_val_score   
 except ImportError:
     try:
         from sklearn.cross_validation import cross_val_score
@@ -21,11 +17,8 @@ except ImportError:
 print("+++ Start of pandas' datahandling +++\n")
 
 def randomforest(industry):
-    # df is a "dataframe":
     path = "IndustryResults/" + industry + ".csv"
-    #df = pd.read_csv('IndustryResults/Technology.csv', header=0)   # read the file w/header row #0
     df = pd.read_csv(path, header=0)
-    #see how many rows are there before cleansing  Consumer_Non-Durables
     df.head()                                 
     df.info()                                 
 
@@ -51,9 +44,9 @@ def randomforest(industry):
             return 6
 
     def transform_simple(x):
-        if (x > 0.20):
+        if (x > 0.25):
             return 1
-        elif (x < 0.20 and x > -0.20):
+        elif (x < 0.25 and x > -0.25):
             return 0
         else:
             return -1
@@ -63,11 +56,10 @@ def randomforest(industry):
         else:
             return 1
 
+    #apply one of the target transformation function
+    df['growth_rate'] = df['growth_rate'].map(transform_simple)
 
-
-    df['growth_rate'] = df['growth_rate'].map(transform)
-
-    #### fill in panda for unfilled feature
+    #creating a list of feature average 
     fill = []
     for i in range(1,27):
         feature_name = "f"+str(i)
@@ -75,50 +67,40 @@ def randomforest(industry):
         column_count = df[feature_name].count()
         column_ave = column_sum / column_count
         fill.append(column_ave)
-    print(fill)
-    #print(len(fill))
-    ###
-    #df = df.dropna()#(axis=1, how='any')# drop unfilled data
-    #see how many rows are there afterwards 
-    #df.head()                                 
-    #df.info()
-
+    #print(fill)
 
     print("\n+++ End of pandas +++\n")
 
     print("+++ Start of numpy/scikit-learn +++\n")
 
-    print("     +++++ Decision Trees +++++\n\n")
+    print("+++++ Decision Trees +++++\n\n")
 
-    # Data needs to be in numpy arrays - these next two lines convert to numpy arrays
-    X_all = df.iloc[:,2:28].values   
-    y_all = df["growth_rate"].values 
+    #Data needs to be in numpy arrays, converts dataframe to numpy array
+    X_all = df.iloc[:,2:28].values   #features are column 2-27
+    y_all = df["growth_rate"].values  #target column
 
+    #fill in 'nan' data with averages of the corresponding column
     for i in range(X_all.shape[1]):
         col = X_all[:,i]
         for n in range(len(col)):
             if (math.isnan(col[n])):
                 col[n] = fill[i]
 
-    #to test 
+    #to test whether the rows are saved 
     # test = pd.DataFrame(X_all)
     # df = test.dropna()
     # test.head() 
     # test.info()
-
 
     split = 50 #split the dataset into testing and training (number of split is arbitrary)
 
     X_labeled = X_all[split:,:]  # Marking where I want to start my training data 
     y_labeled = y_all[split:]    
 
-    #
-    #we can scramble the data - but only the labeled data!
-
-    indices = np.random.permutation(len(X_labeled))  # this scrambles the data each time
+    #Scrambling training data
+    indices = np.random.permutation(len(X_labeled)) 
     X_data_full = X_labeled[indices]
     y_data_full = y_labeled[indices]
-
     X_train = X_data_full
     y_train = y_data_full
 
@@ -131,6 +113,7 @@ def randomforest(industry):
         feature_names.append("f"+str(i))
     target_names = ['growth_rate']
 
+    #initializing testing sets
     X_test = X_all[:split,:]
     y_test = y_all[:split]
     #
@@ -139,70 +122,48 @@ def randomforest(industry):
     max_depth_DT = 1
     max_CV_DT = 0
     for max_depth in range(1,20): #looping through max_depth to find the optimal
-        # create our classifier
-        dtree = tree.DecisionTreeClassifier(max_depth=max_depth)#tree.DecisionTreeRegressor(max_depth=max_depth,random_state=0)
+        # create classifier
+        dtree = tree.DecisionTreeClassifier(max_depth=max_depth)
         #dtree = dtree.fit(X_train, y_train) 
-        #
-        # cross-validate to tune our model (this week, all-at-once)
-        #
-        scores = cross_val_score(dtree, X_train, y_train, cv=5)
-        average_cv_score_DT = scores.mean()
-
-        #using scores:
-        #score = dtree.score(X_test, y_test, sample_weight=None)
-        print("For depth=", max_depth, "average CV score = ", average_cv_score_DT)#score)#average_cv_score_DT)  
-        # print("      Scores:", scores)
-        if (max_CV_DT < average_cv_score_DT):#score):#average_cv_score_DT):
-            max_CV_DT = average_cv_score_DT#score#average_cv_score_DT
+        scores = cross_val_score(dtree, X_train, y_train, cv=5) #5 folds
+        average_cv_score_DT = scores.mean() #average the cv scores 
+        print("For depth=", max_depth, "average CV score = ", average_cv_score_DT)
+        #determining the best depth to use 
+        if (max_CV_DT < average_cv_score_DT):
+            max_CV_DT = average_cv_score_DT
             max_depth_DT = max_depth
     print("The best max_depth for Decision Tree is: ", max_depth_DT)
     print("The CV score for that max_depth is: ", max_CV_DT)
 
-    #import sys
-    #print("bye!")
-    #sys.exit(0)
-
-    MAX_DEPTH = max_depth_DT   # choose a MAX_DEPTH based on cross-validation... 
-    #if (MAX_DEPTH == 0):
-    #    MAX_DEPTH = 1
+    MAX_DEPTH = max_depth_DT  
     print("\nChoosing MAX_DEPTH =", MAX_DEPTH, "\n")
 
-    #
-    # now, train the model with ALL of the training data...  and predict the unknown labels
-    #
+    #once Max Depth is determined, train using train data to predict testing data 
+    X_test = X_all[:split,:]              
+    X_train = X_all[split:,:]              
+    y_test = y_all[:split]                  
+    y_train = y_all[split:]                 
 
-    X_test = X_all[:split,:]              # the final testing data
-    X_train = X_all[split:,:]              # the training data
-
-    y_test = y_all[:split]                  # the final testing outputs/labels (unknown)
-    y_train = y_all[split:]                  # the training outputs/labels (known)
-
-    # our decision-tree classifier...
-    dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH)#DecisionTreeRegressor(max_depth=MAX_DEPTH,random_state=0)
+    #decision-tree classifier
+    dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH)
     dtree = dtree.fit(X_train, y_train) 
 
-    #
-    # and... Predict the unknown data labels
-    #
+    #prediction
     print("Decision-tree predictions:\n")
     predicted_labels = dtree.predict(X_test)
     answer_labels = y_test
 
-    #
-    # formatted printing! (docs.python.org/3/library/string.html#formatstrings)
-    #
+    # print result
     s = "{0:<11} | {1:<11}".format("Predicted","Answer")
     #  arg0: left-aligned, 11 spaces, string, arg1: ditto
     print(s)
     s = "{0:<11} | {1:<11}".format("-------","-------")
     print(s)
-    # the table...
     for p, a in zip( predicted_labels, answer_labels ):
         s = "{0:<11} | {1:<11}".format(p,a)
         print(s)
 
-    #predict = predicted_labels.tolist()
-    #answer = answer_labels.tolist()
+    #Calculating accuracy for category 1:
     num_count = 0
     num_correct = 0
     for num in range((len(predicted_labels))):
@@ -213,49 +174,31 @@ def randomforest(industry):
     correct_one = num_correct / num_count
     print("percentage of getting 1 right is:"+ str(correct_one))
 
-
-    #
     # feature importances!
-    #
     print()
     print("dtree.feature_importances_ are\n      ", dtree.feature_importances_) 
     print("Order:", feature_names[0:])
-    print("confidence score")
+    print()
+    print("confidence score:")
     print(dtree.score(X_test, y_test, sample_weight=None))
 
-
-
-    #
-    # now, show off Random Forests!
-    # 
-
-"""
+    #randomforest 
     print("\n\n")
     print("     +++++ Random Forests +++++\n\n")
 
-    #
-    # The data is already in good shape -- let's start from the original dataframe:
-    #
+    X_labeled = X_all[split:,:]  
+    y_labeled = y_all[split:]    
 
-
-    X_labeled = X_all[split:,:]  # just the input features, X, that HAVE output labels
-    y_labeled = y_all[split:]    # here are the output labels, y, for X_labeled
-
-    #
-    # we can scramble the data - but only the labeled data!
-    # 
-    indices = np.random.permutation(len(X_labeled))  # this scrambles the data each time
+    #scramble data
+    indices = np.random.permutation(len(X_labeled))  
     X_data_full = X_labeled[indices]
     y_data_full = y_labeled[indices]
-
     X_train = X_data_full
     y_train = y_data_full
-
 
     #
     # cross-validation to determine the Random Forest's parameters (max_depth and n_estimators)
     #
-
     highest_CV_score = 0
     best_max_depth = 1
     best_number_estimator = 1
@@ -265,17 +208,11 @@ def randomforest(industry):
         for n_est in range(50,200,50): 
 
             rforest = ensemble.RandomForestClassifier(max_depth=m_depth, n_estimators=n_est)
-            #rforest = rforest.fit(X_train, y_train) 
-
-            # an example call to run 5x cross-validation on the labeled data
             scores = cross_val_score(rforest, X_train, y_train, cv=5)
             print("CV scores:", scores)
             print("CV scores' average:", scores.mean())
             average_cv_scores_RT = scores.mean()
-            # you'll want to take the average of these...
-            #average_cv_scores_RT = rforest.score(X_train,y_train)#scores.mean()
-            #print("CV scores' average:", average_cv_scores_RT)
-            # comparing with highest CV score to determine whether this pair of depth and n_estimator is good or not:
+            #comparison
             if (average_cv_scores_RT > highest_CV_score):
                 highest_CV_score = average_cv_scores_RT
                 best_max_depth = m_depth
@@ -284,46 +221,37 @@ def randomforest(industry):
     print("The best pair of max_depth and n_estimators are: ", best_max_depth, "and", best_number_estimator)
     print("\nThe CV score for that pair is = ", highest_CV_score)
 
-    #
-    # now, train the model with ALL of the training data...  and predict the labels of the test set
-    #
-
-    X_test = X_all[:split,:]              # the final testing data
-    X_train = X_all[split:,:]              # the training data
-
-    y_test = y_all[:split]                  # the final testing outputs/labels (unknown)
-    y_train = y_all[split:]                  # the training outputs/labels (known)
+    # now, train the model with ALL of the training data
+    X_test = X_all[:split,:]              
+    X_train = X_all[split:,:]              
+    y_test = y_all[:split]                 
+    y_train = y_all[split:]                  
 
     # these next lines is where the full training data is used for the model
-    MAX_DEPTH = best_max_depth#2
-    NUM_TREES = best_number_estimator#10
-    # if (NUM_TREES == 0):
-    #     NUM_TREES = 1
-    # if (MAX_DEPTH == 0):
-    #     MAX_DEPTH = 1
+    MAX_DEPTH = best_max_depth
+    NUM_TREES = best_number_estimator
+
     print()
     print("Using MAX_DEPTH=", MAX_DEPTH, "and NUM_TREES=", NUM_TREES)
+    #randomforest classifier
     rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH, n_estimators=NUM_TREES)
     rforest = rforest.fit(X_train, y_train) 
 
     # here are some examples, printed out:
     print("Random-forest predictions:\n")
     predicted_labels = rforest.predict(X_test)
-    answer_labels = y_test  # note that we're "cheating" here!
+    answer_labels = y_test  
 
-    #
-    # formatted printing again (see above for reference link)
-    #
+    #printing result
     s = "{0:<11} | {1:<11}".format("Predicted","Answer")
-    #  arg0: left-aligned, 11 spaces, string, arg1: ditto
     print(s)
     s = "{0:<11} | {1:<11}".format("-------","-------")
     print(s)
-    # the table...
     for p, a in zip( predicted_labels, answer_labels ):
         s = "{0:<11} | {1:<11}".format(p,a)
         print(s)
     
+    #calculating accuracy for category 1 
     num_count = 0
     num_correct = 0
     for num in range((len(predicted_labels))):
@@ -334,14 +262,10 @@ def randomforest(industry):
     correct_one = num_correct / num_count
     print("percentage of getting 1 right is:"+ str(correct_one))
 
-    #
     # feature importances
-    #
     print("\nrforest.feature_importances_ are\n      ", rforest.feature_importances_) 
     print("Order:", feature_names[0:])
     print(rforest.score(X_test, y_test, sample_weight=None))
 
-    # The individual trees are in  rforest.estimators_  [a list of decision trees!]
-"""
 if True:
-    randomforest("Technology")
+    randomforest("Capital_Goods")
