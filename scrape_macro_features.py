@@ -47,8 +47,9 @@ def use_macro_csv(year):
   csvfile.close()
   return use_macro_csv(year)
 
-def main():
-  print(use_macro_csv("2015"))
+# def main():
+#  # print(use_macro_csv("2017"))
+#  print()
 
-if __name__ == "__main__":
-    main()  # hike!
+# if __name__ == "__main__":
+#     main()  # hike!

@@ -36,7 +36,7 @@ def gather_predict_data(comp):
     """
     now = datetime.datetime.now()
     output = []
-    year = now.year - 1 
+    year = now.year 
     predict = {year:0}
     try:
       #stock_growths = ssg.scrape_stock_growth(comp)
@@ -44,10 +44,11 @@ def gather_predict_data(comp):
     except:
       print("error")
       pass
-    ur = smf.use_macro_csv(year)[0]
-    gdp = smf.use_macro_csv(year)[1]
-    ratio = ratios[year]
-    row = [comp, year, ur, gdp]
+    ur = smf.get_ur(2017)#use_macro_csv(year)[0]
+    gdp = smf.get_gdp(2017)#use_macro_csv(year)[1]
+    ratio = ratios[year-1]#[year]
+    row = [comp, year-1, ur, gdp]
+    #row = [comp, year-1]
     row.extend(ratio)
     if cic.check_na(ratio) < 15: # change NA limit here
         output.append(row)
