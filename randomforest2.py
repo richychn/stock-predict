@@ -233,7 +233,7 @@ def randomforest(industry, prediction_data):
     NUM_TREES_RF = best_number_estimator
 
     print()
-    print("Using MAX_DEPTH=", MAX_DEPTH1, "and NUM_TREES=", NUM_TREES1)
+    print("Using MAX_DEPTH=", MAX_DEPTH_RF, "and NUM_TREES=", NUM_TREES_RF)
     #randomforest classifier
     rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
     rforest = rforest.fit(X_train, y_train) 
