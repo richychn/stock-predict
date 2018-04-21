@@ -68,14 +68,14 @@ def alltogether():
         predict_arr = gather_predict_data(comp)
         predict_arr[0] = predict_arr[0][2:]
         predict_arr = np.asarray(predict_arr)
-        tree_score, predict0 = rf.randomforest(industry, predict_arr)
-        nn_score, predict1 = nn.neural_network(industry, predict_arr)
-        if (tree_score >= nn_score):
-            print("tree model")
-            return predict0
-        else:
-            print("neural_network model")
-            return predict1
+        print(rf.randomforest(industry, predict_arr))
+        print(nn.neural_network(industry, predict_arr))
+        # if (tree_score >= nn_score):
+        #     print("tree model")
+        #     return predict0
+        # else:
+        #     print("neural_network model")
+        #     return predict1
     else:
         print("Job Terminated: Company not found in dataset")
     

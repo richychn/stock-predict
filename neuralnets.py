@@ -152,6 +152,6 @@ def neural_network(industry, prediction_data):
     unknown_predictions = mlp.predict(prediction_data)
     print("  Our Growth Rate predictions: ", unknown_predictions)
 
-    return accuracy, unknown_predictions
+    return unknown_predictions
 
 #neural_network("Finance")
