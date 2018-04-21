@@ -59,7 +59,7 @@ def create_industry_csv(industry):
       filewriter.writerow( row )
   csvfile.close()
 
-create_industry_csv("Consumer Durables")
+#create_industry_csv("Consumer Durables")
 # test_industry("Finance")
 
 # for ind in cbi.final_industry_dict().keys():

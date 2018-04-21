@@ -4,7 +4,7 @@ import scrape_macro_features as smf
 import scrape_stock_growth as ssg
 import companies_by_industry_dict as cbi
 import create_industry_csv as cic
-import randomforest2 as rf
+# import randomforest2 as rf
 
 import csv
 import numpy as np
