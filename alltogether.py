@@ -70,7 +70,7 @@ def alltogether():
     else:
         print("Job Terminated: Company not found in dataset")
     
-    
+alltogether()
 
 
 

@@ -280,5 +280,5 @@ def randomforest(industry, prediction_data):
         #dtree = dtree.fit(X_all, y_all)
     return dtree.predict(prediction_data)[0]
 
-if True:
-    randomforest("Consumer_Non-Durables", prediction_data)
+# if True:
+#     randomforest("Consumer_Non-Durables", prediction_data)
