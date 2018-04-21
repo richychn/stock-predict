@@ -50,6 +50,7 @@ def randomforest(industry, prediction_data):
             return 0
         else:
             return -1
+    
     def transform(s):
         if(s<=0):
             return -1
@@ -279,5 +280,5 @@ def randomforest(industry, prediction_data):
         #dtree = dtree.fit(X_all, y_all) 
     return dtree.predict(prediction_data)[0]
 
-# if True:
-#     randomforest("Finance", prediction_data)
+if True:
+    randomforest("Consumer_Non-Durables", prediction_data)
