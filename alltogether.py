@@ -55,10 +55,6 @@ def gather_predict_data(comp):
     if cic.check_na(ratio) < 15: # change NA limit here
         output.append(row)
     return output
-
-def fill_data_predict(averages, predict_arr):
-    """
-    """
     
 
 def alltogether():
