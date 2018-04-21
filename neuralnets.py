@@ -58,7 +58,7 @@ def neural_network(industry, prediction_data):
         column_ave = column_sum / column_count
         fill.append(column_ave)
     
-    fill predict data 
+    #fill predict data 
     for i in range(len(prediction_data[0])):
         if (math.isnan(prediction_data[0][i])):
             prediction_data[0][i] = fill[i]
