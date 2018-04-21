@@ -70,9 +70,9 @@ def randomforest(industry):#, prediction_data):
     #print(fill)
     
     #fill predict data 
-    # for i in range(len(prediction_data[0])):
-    #     if (math.isnan(prediction_data[0][i])):
-    #         prediction_data[0][i] = fill[i]
+    for i in range(len(prediction_data[0])):
+        if (math.isnan(prediction_data[0][i])):
+            prediction_data[0][i] = fill[i]
 
     print("\n+++ End of pandas +++\n")
 
@@ -276,15 +276,15 @@ def randomforest(industry):#, prediction_data):
 
 
     ###comparing decision tree and random forests
-    # if (rforest_score >= decision_tree_score):
+     if (rforest_score >= decision_tree_score):
     #     #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
     #     #rforest = rforest.fit(X_all, y_all)
-    #     print("Using decision tree model")
-    #     return rforest.predict(prediction_data)[0]
-    # else:
+         print("Using decision tree model")
+         return rforest.predict(prediction_data)[0]
+     else:
     #     #dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
     #     #dtree = dtree.fit(X_all, y_all)
-    #     print("Using randomforest model")
-    #     return dtree.predict(prediction_data)[0]
+         print("Using randomforest model")
+         return dtree.predict(prediction_data)[0]
 
-randomforest("Consumer-Non-Durables")
+#randomforest("Energy")
