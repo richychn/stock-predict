@@ -269,6 +269,10 @@ def randomforest(industry, prediction_data):
     rforest_score = rforest.score(X_test, y_test, sample_weight=None)
     print(rforest_score)
     
+    ###fill in data:
+    #row = 
+    #for pos in range(len(prediction_data)):
+        
     ###comparing decision tree and random forests
     if (rforest_score >= decision_tree_score):
         #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
