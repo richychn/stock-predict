@@ -5,18 +5,18 @@ import math
 from sklearn import tree      
 from sklearn import ensemble  
 
-try: # different imports for different versions of scikit-learn
-    from sklearn.model_selection import cross_val_score   
-except ImportError:
-    try:
-        from sklearn.cross_validation import cross_val_score
-    except:
-        print("No cross_val_score!")
-
-
-print("+++ Start of pandas' datahandling +++\n")
-
 def randomforest(industry, prediction_data):
+    try: # different imports for different versions of scikit-learn
+        from sklearn.model_selection import cross_val_score   
+    except ImportError:
+        try:
+            from sklearn.cross_validation import cross_val_score
+        except:
+            print("No cross_val_score!")
+
+
+    print("+++ Start of pandas' datahandling +++\n")
+
     path = "IndustryResults/" + industry + ".csv"
     df = pd.read_csv(path, header=0)
     df.head()                                 
@@ -270,14 +270,14 @@ def randomforest(industry, prediction_data):
     print(rforest_score)
     """
     ###comparing decision tree and random forests
-    if (rforest_score >= decision_tree_score):
+   # if (rforest_score >= decision_tree_score):
         #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
         #rforest = rforest.fit(X_all, y_all)
-        return rforest.predict(prediction_data)[0]
-    else:
+   #     return rforest.predict(prediction_data)[0]
+   # else:
         #dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
         #dtree = dtree.fit(X_all, y_all) 
-        return dtree.predict(prediction_data)[0]
+    return dtree.predict(prediction_data)[0]
 
 # if True:
 #     randomforest("Finance", prediction_data)
