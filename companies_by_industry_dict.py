@@ -154,9 +154,9 @@ def final_industry_dict():
     """
     """
     final_industry_dict = {}
-    final_dict_helper("NASDAQALL.csv", final_industry_dict)
-    final_dict_helper("NYSEALL.csv", final_industry_dict)
-    final_dict_helper("AMEXALL.csv", final_industry_dict)
+    final_dict_helper("Exchanges/NASDAQALL.csv", final_industry_dict)
+    final_dict_helper("Exchanges/NYSEALL.csv", final_industry_dict)
+    final_dict_helper("Exchanges/AMEXALL.csv", final_industry_dict)
 
     return final_industry_dict
 

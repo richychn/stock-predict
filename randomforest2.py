@@ -5,7 +5,7 @@ import math
 from sklearn import tree
 from sklearn import ensemble
 
-def randomforest(industry, prediction_data):
+def randomforest(industry)#, prediction_data):
     try: # different imports for different versions of scikit-learn
         from sklearn.model_selection import cross_val_score
     except ImportError:
@@ -70,9 +70,9 @@ def randomforest(industry, prediction_data):
     #print(fill)
     
     #fill predict data 
-    for i in range(len(prediction_data[0])):
-        if (math.isnan(prediction_data[0][i])):
-            prediction_data[0][i] = fill[i]
+    # for i in range(len(prediction_data[0])):
+    #     if (math.isnan(prediction_data[0][i])):
+    #         prediction_data[0][i] = fill[i]
 
     print("\n+++ End of pandas +++\n")
 
@@ -274,19 +274,17 @@ def randomforest(industry, prediction_data):
     rforest_score = rforest.score(X_test, y_test, sample_weight=None)
     print(rforest_score)
 
-    ###fill in data:
-    #row =
-    #for pos in range(len(prediction_data)):
 
     ###comparing decision tree and random forests
-    if (rforest_score >= decision_tree_score):
-        #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
-        #rforest = rforest.fit(X_all, y_all)
-        return rforest.predict(prediction_data)[0]
-    else:
-        #dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
-        #dtree = dtree.fit(X_all, y_all)
-        return dtree.predict(prediction_data)[0]
+    # if (rforest_score >= decision_tree_score):
+    #     #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
+    #     #rforest = rforest.fit(X_all, y_all)
+    #     print("Using decision tree model")
+    #     return rforest.predict(prediction_data)[0]
+    # else:
+    #     #dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
+    #     #dtree = dtree.fit(X_all, y_all)
+    #     print("Using randomforest model")
+    #     return dtree.predict(prediction_data)[0]
 
-# if True:
-#     randomforest("Finance", prediction_data)
+randomforest(Consumer Non-Durables, )

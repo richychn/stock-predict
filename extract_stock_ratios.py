@@ -4,7 +4,6 @@ import good_morning as gm
 import math
 
 
-
 def get_years(yrs_dict):
     """
     """
@@ -73,5 +72,5 @@ def main():
     Apple_features = extract_features('AAPL', yrs_dict)
     print(Apple_features)
 
-# if __name__ == "__main__":
-#     main()  # hike!
+if False:
+    main()
