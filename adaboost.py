@@ -78,7 +78,7 @@ def adaboost(industry):
     print("+++++ Adaboost +++++\n\n")
 
     #Data needs to be in numpy arrays, converts dataframe to numpy array
-    X_all = df.iloc[:,2:29].values   #features are column 2-27
+    X_all = df.iloc[:,2:28].values   #features are column 2-27
     y_all = df["growth_rate"].values  #target column
 
     #fill in 'nan' data with averages of the corresponding column
@@ -109,11 +109,11 @@ def adaboost(industry):
     #
     # some labels to make the graphical trees more readable...
     #
-    print("Some labels for the graphical tree:")
-    feature_names = []
-    for i in range(1,28):
-        feature_names.append("f"+str(i))
-    target_names = ['growth_rate']
+    # print("Some labels for the graphical tree:")
+    # feature_names = []
+    # for i in range(1,28):
+    #     feature_names.append("f"+str(i))
+    # target_names = ['growth_rate']
 
     #initializing testing sets
     X_test = X_all[:split,:]
@@ -173,6 +173,7 @@ def adaboost(industry):
         else:
             correct_one = num_correct / num_count
         print("percentage of getting " + str(cat) + " right is:"+ str(correct_one))
+    
     accuracy_of(0)
     accuracy_of(1)
     accuracy_of(2)
