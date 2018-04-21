@@ -195,4 +195,4 @@ def adaboost(industry):
     return adb.predict(X_test)
 
 #adaboost("Technology")
-adaboost("Energy")
+#adaboost("Energy")
