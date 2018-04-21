@@ -107,7 +107,7 @@ def neural_network(industry, prediction_data):
         # now, rescale inputs -- both testing and training
         X_train = scaler.transform(X_train)
         X_test = scaler.transform(X_test)
-        prediction_data = scalar.transform(prediction_data)
+        prediction_data = scaler.transform(prediction_data)
 
 
 # scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html 
