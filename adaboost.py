@@ -59,7 +59,7 @@ def adaboost(industry):
             return 1
 
     #apply one of the target transformation function
-    # df['growth_rate'] = df['growth_rate'].map(transform_target)
+    df['growth_rate'] = df['growth_rate'].map(transform_simple)
 
     #creating a list of feature average
     fill = []
@@ -120,25 +120,19 @@ def adaboost(industry):
     y_test = y_all[:split]
 
     # cross-validation and scoring to determine parameter: max_depth
-    #
-    # max_depth_DT = 1
-    # max_CV_DT = 0
-    # for max_depth in range(1,20): #looping through max_depth to find the optimal
-    #     # create classifier
-    #     dtree = tree.DecisionTreeClassifier(max_depth=max_depth)
-    #     #dtree = dtree.fit(X_train, y_train)
-    #     scores = cross_val_score(dtree, X_train, y_train, cv=5) #5 folds
-    #     average_cv_score_DT = scores.mean() #average the cv scores
-    #     print("For depth=", max_depth, "average CV score = ", average_cv_score_DT)
-    #     #determining the best depth to use
-    #     if (max_CV_DT < average_cv_score_DT):
-    #         max_CV_DT = average_cv_score_DT
-    #         max_depth_DT = max_depth
-    # print("The best max_depth for Decision Tree is: ", max_depth_DT)
-    # print("The CV score for that max_depth is: ", max_CV_DT)
+    highest_CV_score = 0
+    best_number_estimator = 1
+    for n_est in range(50,200,50):
 
-    # MAX_DEPTH_DT = max_depth_DT
-    # print("\nChoosing MAX_DEPTH =", MAX_DEPTH_DT, "\n")
+        adb = ensemble.AdaBoostClassifier(n_estimators=n_est)
+        scores = cross_val_score(adb, X_train, y_train, cv=5)
+        print("CV scores:", scores)
+        print("CV scores' average:", scores.mean())
+        average_cv_scores_ADB = scores.mean()
+        #comparison
+        if (average_cv_scores_ADB > highest_CV_score):
+            highest_CV_score = average_cv_scores_ADB
+            best_number_estimator = n_est
 
     #once Max Depth is determined, train using train data to predict testing data
     X_test = X_all[:split,:]
@@ -147,7 +141,7 @@ def adaboost(industry):
     y_train = y_all[split:]
 
     # adaboost classifier
-    adb = AdaBoostClassifier(n_estimators=100)
+    adb = AdaBoostClassifier(n_estimators=best_number_estimator)
     adb = adb.fit(X_train, y_train)
 
     #prediction
