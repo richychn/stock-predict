@@ -66,7 +66,8 @@ def alltogether():
         predict_arr[0] = predict_arr[0][2:]
         predict_arr = np.asarray(predict_arr)
         #result = rf.randomforest(industry, predict_arr)
-        rf.randomforest(industry, predict_arr)
+        return rf.randomforest(industry, predict_arr)
+        #return predict_arr
     else:
         print("Job Terminated: Company not found in dataset")
     

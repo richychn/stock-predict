@@ -182,7 +182,7 @@ def randomforest(industry, prediction_data):
     print("confidence score:")
     decision_tree_score = dtree.score(X_test, y_test, sample_weight=None)
     print(decision_tree_score)
-    """
+    
     #randomforest 
     print("\n\n")
     print("     +++++ Random Forests +++++\n\n")
@@ -268,16 +268,16 @@ def randomforest(industry, prediction_data):
     print("Order:", feature_names[0:])
     rforest_score = rforest.score(X_test, y_test, sample_weight=None)
     print(rforest_score)
-    """
+    
     ###comparing decision tree and random forests
-   # if (rforest_score >= decision_tree_score):
+    if (rforest_score >= decision_tree_score):
         #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
         #rforest = rforest.fit(X_all, y_all)
-   #     return rforest.predict(prediction_data)[0]
-   # else:
+        return rforest.predict(prediction_data)[0]
+    else:
         #dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
         #dtree = dtree.fit(X_all, y_all) 
-    return dtree.predict(prediction_data)[0]
+        return dtree.predict(prediction_data)[0]
 
 # if True:
 #     randomforest("Finance", prediction_data)
