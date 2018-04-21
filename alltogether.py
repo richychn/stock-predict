@@ -6,6 +6,7 @@ import companies_by_industry_dict as cbi
 import create_industry_csv as cic
 import randomforest2 as rf
 import neuralnets as nn
+import adaboost as ad
 
 import csv
 import numpy as np
@@ -68,8 +69,9 @@ def alltogether():
         # predict_arr = gather_predict_data(comp)
         # predict_arr[0] = predict_arr[0][2:]
         # predict_arr = np.asarray(predict_arr)
-        print(rf.randomforest(industry))
-        print(nn.neural_network(industry))
+        rf.randomforest(industry)
+        nn.neural_network(industry)
+        ad.adaboost(industry)
         # print(nn.neural_network(industry, predict_arr))
         # if (tree_score >= nn_score):
         #     print("tree model")
