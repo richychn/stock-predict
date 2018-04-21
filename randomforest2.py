@@ -5,7 +5,7 @@ import math
 from sklearn import tree
 from sklearn import ensemble
 
-def randomforest(industry)#, prediction_data):
+def randomforest(industry):#, prediction_data):
     try: # different imports for different versions of scikit-learn
         from sklearn.model_selection import cross_val_score
     except ImportError:
@@ -287,4 +287,4 @@ def randomforest(industry)#, prediction_data):
     #     print("Using randomforest model")
     #     return dtree.predict(prediction_data)[0]
 
-randomforest(Consumer Non-Durables, )
+randomforest(Consumer Non-Durables)
