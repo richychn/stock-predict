@@ -33,6 +33,7 @@ def get_gdp(year):
   return ret
 
 def use_macro_csv(year):
+  year = str(year)
   csvfile = open("MacroFeatures.csv", newline='' )
   csvrows = csv.reader( csvfile )
   all_rows = {}
@@ -43,13 +44,14 @@ def use_macro_csv(year):
   else:
     csvfile = open("MacroFeatures.csv", "w", newline='' )
     filewriter = csv.writer(csvfile, delimiter=",")
-    filewriter.writerow( [year, get_ur(year), get_gdp(year)] )
+    all_rows[year] = [get_ur(year), get_gdp(year)]
+    for year in all_rows:
+      filewriter.writerow( [year, all_rows[year][0], all_rows[year][1]] )
   csvfile.close()
   return use_macro_csv(year)
 
 # def main():
-#  # print(use_macro_csv("2017"))
-#  print()
+#  print(use_macro_csv(2017))
 
 # if __name__ == "__main__":
 #     main()  # hike!

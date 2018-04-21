@@ -28,15 +28,19 @@ def list_of_rows(industry):
       print("error")
       continue
     for year in ratios:
-      ur = smf.use_macro_csv(year)[0]
-      gdp = smf.use_macro_csv(year)[1]
-      ratio = ratios[year]
-      growth = stock_growths[year + 1]
-      row = [comp, year, ur, gdp]
-      row.extend(ratio)
-      row.append(growth)
-      if check_na(ratio) < 15: # change NA limit here
-        rows.append(row)
+      year = year + 1
+      if year + 1 in ratios:
+        ur = smf.use_macro_csv(year)[0]
+        gdp = smf.use_macro_csv(year)[1]
+        ratio = ratios[year]
+        growth = stock_growths[year + 1]
+        lag_growth = stock_growths[year]
+        row = [comp, year, ur, gdp]
+        row.extend(ratio)
+        row.append(lag_growth)
+        row.append(growth)
+        if check_na(ratio) < 15: # change NA limit here
+          rows.append(row)
   return rows
 
 def csv_name(name):
@@ -55,7 +59,7 @@ def create_industry_csv(industry):
       filewriter.writerow( row )
   csvfile.close()
 
-# create_industry_csv("Finance")
+create_industry_csv("Consumer Durables")
 # test_industry("Finance")
 
 # for ind in cbi.final_industry_dict().keys():

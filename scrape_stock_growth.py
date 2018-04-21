@@ -5,7 +5,7 @@ from decimal import *
 
 def get_stock_price_page(symbol):
   url = "https://finance.yahoo.com/quote/" + symbol \
-      + "/history?period1=1325404800&period2=1514793600&" \
+      + "/history?period1=1262332800&period2=1514793600&" \
       + "interval=1mo&filter=history&frequency=1mo"
   response = requests.get(url)
   if response.status_code != 404:
@@ -44,8 +44,8 @@ def scrape_stock_growth(symbol):
   soup = get_stock_price_page(symbol)
   stock_prices = find_stock_prices(soup)
   stock_growth = calculate_price_growth(stock_prices)
-  growth_categories = categorize_price_growth(stock_growth)
-  return growth_categories
+  # growth_categories = categorize_price_growth(stock_growth)
+  return stock_growth
 
 def growth_calculate(second, first):
   return (second - first)/first
