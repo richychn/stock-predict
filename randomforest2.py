@@ -279,12 +279,12 @@ def randomforest(industry):#, prediction_data):
      if (rforest_score >= decision_tree_score):
     #     #rforest = ensemble.RandomForestClassifier(max_depth=MAX_DEPTH_RF, n_estimators=NUM_TREES_RF)
     #     #rforest = rforest.fit(X_all, y_all)
-         print("Using decision tree model")
-         return rforest.predict(prediction_data)[0]
+         print("Using randomforest model for prediction")
+         return rforest_score, rforest.predict(prediction_data)[0]
      else:
     #     #dtree = tree.DecisionTreeClassifier(max_depth=MAX_DEPTH_DT)
     #     #dtree = dtree.fit(X_all, y_all)
-         print("Using randomforest model")
-         return dtree.predict(prediction_data)[0]
+         print("Using decision model for prediction")
+         return decision_tree_score, dtree.predict(prediction_data)[0]
 
 #randomforest("Energy")

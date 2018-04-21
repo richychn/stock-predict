@@ -1,11 +1,12 @@
 import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_mldata
 from sklearn.neural_network import MLPClassifier
+import math
 
 import numpy as np
 import pandas as pd
 
-def neural_network(industry):#, prediction_data):
+def neural_network(industry, prediction_data):
     print("+++ Start of pandas' datahandling +++\n")
 
     path = "IndustryResults/" + industry + ".csv"
@@ -57,10 +58,10 @@ def neural_network(industry):#, prediction_data):
         column_ave = column_sum / column_count
         fill.append(column_ave)
     
-    #fill predict data 
-    # for i in range(len(prediction_data[0])):
-    #     if (math.isnan(prediction_data[0][i])):
-    #         prediction_data[0][i] = fill[i]
+    fill predict data 
+    for i in range(len(prediction_data[0])):
+        if (math.isnan(prediction_data[0][i])):
+            prediction_data[0][i] = fill[i]
 
 
     print("+++ Converting to numpy arrays... +++")
@@ -91,9 +92,8 @@ def neural_network(industry):#, prediction_data):
     X_train = X_data_full
     y_train = y_data_full
 
-    X_test = X_known[:split,:]
-    y_test = y_known[:split]
-
+    X_test = X_all[:split,:]
+    y_test = y_all[:split]
 #
 # it's important to keep the input values in the 0-to-1 or -1-to-1 range
 #    This is done through the "StandardScaler" in scikit-learn
@@ -107,7 +107,7 @@ def neural_network(industry):#, prediction_data):
         # now, rescale inputs -- both testing and training
         X_train = scaler.transform(X_train)
         X_test = scaler.transform(X_test)
-       # prediction_data = scalar.transform(prediction_data)
+        prediction_data = scalar.transform(prediction_data)
 
 
 # scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html 
@@ -116,7 +116,7 @@ def neural_network(industry):#, prediction_data):
 #                     solver='sgd', verbose=10, tol=1e-4, random_state=1)
 
 #full observations
-    mlp = MLPClassifier(hidden_layer_sizes=(5,5), max_iter=200, alpha=1e-4,
+    mlp = MLPClassifier(hidden_layer_sizes=(10,10,5), max_iter=200, alpha=1e-4,
                         solver='sgd', verbose=True, shuffle=True, early_stopping = False, # tol=1e-4, 
                         random_state=None, # reproduceability
                         learning_rate_init=.1, learning_rate = 'adaptive')
@@ -149,14 +149,9 @@ def neural_network(industry):#, prediction_data):
 
     # prediction data
     #
-   # unknown_predictions = mlp.predict(prediction_data)
-   # print("  Our Growth Rate predictions: ", unknown_predictions)
+    unknown_predictions = mlp.predict(prediction_data)
+    print("  Our Growth Rate predictions: ", unknown_predictions)
 
-    # if False:
-    #     L = [5.2, 4.1, 1.5, 0.1]
-    #     row = np.array(L)  # makes an array-row
-    #     row = row.reshape(1,4)   # makes an array of array-row
-    #     if USE_SCALER == True:
-    #         row = scaler.transform(row)
-    #     print("\nrow is", row)
-    #     print("mlp.predict_proba(row) == ", mlp.predict_proba(row))
+    return accuracy, unknown_predictions
+
+#neural_network("Finance")

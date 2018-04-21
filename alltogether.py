@@ -5,6 +5,7 @@ import scrape_stock_growth as ssg
 import companies_by_industry_dict as cbi
 import create_industry_csv as cic
 import randomforest2 as rf
+import neuralnets as nn
 
 import csv
 import numpy as np
@@ -67,7 +68,14 @@ def alltogether():
         predict_arr = gather_predict_data(comp)
         predict_arr[0] = predict_arr[0][2:]
         predict_arr = np.asarray(predict_arr)
-        return rf.randomforest(industry, predict_arr)
+        tree_score, predict0 = rf.randomforest(industry, predict_arr)
+        nn_score, predict1 = nn.neural_network(industry, predict_arr)
+        if (tree_score >= nn_score):
+            print("tree model")
+            return predict0
+        else:
+            print("neural_network model")
+            return predict1
     else:
         print("Job Terminated: Company not found in dataset")
     
