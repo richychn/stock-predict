@@ -287,4 +287,4 @@ def randomforest(industry):#, prediction_data):
     #     print("Using randomforest model")
     #     return dtree.predict(prediction_data)[0]
 
-randomforest(Consumer Non-Durables)
+randomforest("Consumer-Non-Durables")
