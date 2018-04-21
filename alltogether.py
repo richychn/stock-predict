@@ -69,6 +69,7 @@ def alltogether():
         # predict_arr[0] = predict_arr[0][2:]
         # predict_arr = np.asarray(predict_arr)
         print(rf.randomforest(industry))
+        print(nn.neural_network(industry))
         # print(nn.neural_network(industry, predict_arr))
         # if (tree_score >= nn_score):
         #     print("tree model")

@@ -71,7 +71,7 @@ def randomforest(industry, prediction_data=[]):
     #print(fill)
     
     #fill predict data 
-    
+
     # for i in range(len(prediction_data[0])):
     #     if (math.isnan(prediction_data[0][i])):
     #         prediction_data[0][i] = fill[i]
