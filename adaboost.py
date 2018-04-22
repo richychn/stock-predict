@@ -1,8 +1,8 @@
-import numpy as np            
+import numpy as np
 import pandas as pd
 import math
-from sklearn import tree      
-from sklearn import ensemble 
+from sklearn import tree
+from sklearn import ensemble
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import AdaBoostClassifier
 
@@ -86,7 +86,7 @@ def adaboost(industry):
         for n in range(len(col)):
             if (math.isnan(col[n])):
                 col[n] = fill[i]
-    
+
     #to test whether the rows are saved
     # test = pd.DataFrame(X_all)
     # df = test.dropna()
@@ -157,7 +157,7 @@ def adaboost(industry):
     for p, a in zip( predicted_labels, answer_labels ):
         s = "{0:<11} | {1:<11}".format(p,a)
         print(s)
-    
+
     #Calculating accuracy for category 1:
     def accuracy_of(cat):
         num_count = 0
@@ -165,21 +165,17 @@ def adaboost(industry):
         for num in range((len(predicted_labels))):
             if (np.equal(predicted_labels[num],np.int_(cat))):
                 num_count += 1
-                if (np.equal(answer_labels[num],np.int_(cat))):
+                if (np.equal(answer_labels[num],np.int_(cat)) or np.equal(answer_labels[num],np.int_(0))):
                     num_correct += 1
         if num_count == 0:
             correct_one = 0
         else:
             correct_one = num_correct / num_count
         print("percentage of getting " + str(cat) + " right is:"+ str(correct_one))
-    
+    accuracy_of(-1)
     accuracy_of(0)
     accuracy_of(1)
-    accuracy_of(2)
-    accuracy_of(3)
-    accuracy_of(4)
-    accuracy_of(5)
-    accuracy_of(6)
+
     # # feature importances!
     # print()
     # print("adb.feature_importances_ are\n      ", adb.feature_importances_)
