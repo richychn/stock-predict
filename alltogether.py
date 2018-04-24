@@ -75,15 +75,15 @@ def alltogether():
         #nn.neural_network(industry, predict_arr)
         ad_score, adprediction = ad.adaboost(industry, predict_arr)
         # print(nn.neural_network(industry, predict_arr))
-        # if (tree_score >= nn_score and tree_score >= ad_score):
-        #     print("tree model")
-        #     return tprediction
-        # elif (nn_score >= tree_score and nn_score >= ad_score):
-        #     print("neural_network model")
-        #     return nprediction
-        # else:
-        #     print("adaboost model")
-        #     return adprediction
+        if (tree_score >= nn_score and tree_score >= ad_score):
+            print("tree model")
+            return tree_score, tprediction
+        elif (nn_score >= tree_score and nn_score >= ad_score):
+            print("neural_network model")
+            return nn_score, nprediction
+        else:
+            print("adaboost model")
+            return ad_score, adprediction
     else:
         print("Job Terminated: Company not found in dataset")
     
