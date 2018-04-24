@@ -70,9 +70,9 @@ def alltogether():
         predict_arr[0] = predict_arr[0][2:]
         predict_arr = np.asarray(predict_arr)
         #tree_score, tprediction = rf.randomforest(industry, predict_arr)
-        rf.randomforest(industry, predict_arr)
-        nn_score, nprediction= nn.neural_network(industry, predict_arr)
-        #ad_score, adprediction = ad.adaboost(industry, predict_arr)
+        #rf.randomforest(industry, predict_arr)
+        #nn_score, nprediction= nn.neural_network(industry, predict_arr)
+        ad_score, adprediction = ad.adaboost(industry, predict_arr)
         # print(nn.neural_network(industry, predict_arr))
         # if (tree_score >= nn_score and tree_score >= ad_score):
         #     print("tree model")
