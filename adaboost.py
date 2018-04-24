@@ -6,7 +6,7 @@ from sklearn import ensemble
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import AdaBoostClassifier
 
-def adaboost(industry):
+def adaboost(industry,prediction_data):
     try: # different imports for different versions of scikit-learn
         from sklearn.model_selection import cross_val_score
     except ImportError:
@@ -69,6 +69,10 @@ def adaboost(industry):
         column_ave = column_sum / column_count
         fill.append(column_ave)
     #print(fill)
+
+    for i in range(len(prediction_data[0])):
+        if (math.isnan(prediction_data[0][i])):
+            prediction_data[0][i] = fill[i]
 
     print("\n+++ End of pandas +++\n")
 
@@ -173,13 +177,13 @@ def adaboost(industry):
             correct_one = num_correct / num_count
         print("percentage of getting " + str(cat) + " right is:"+ str(correct_one))
     
-    accuracy_of(0)
-    accuracy_of(1)
-    accuracy_of(2)
-    accuracy_of(3)
-    accuracy_of(4)
-    accuracy_of(5)
-    accuracy_of(6)
+    # accuracy_of(0)
+    # accuracy_of(1)
+    # accuracy_of(2)
+    # accuracy_of(3)
+    # accuracy_of(4)
+    # accuracy_of(5)
+    # accuracy_of(6)
     # # feature importances!
     # print()
     # print("adb.feature_importances_ are\n      ", adb.feature_importances_)
@@ -192,7 +196,8 @@ def adaboost(industry):
     adb_score = adb.score(X_test, y_test, sample_weight=None)
     print(adb_score)
 
-    return adb.predict(X_test)
+    prediction = adb.predict(prediction_data)
+    return adb_score, prediction
 
 #adaboost("Technology")
 #adaboost("Energy")

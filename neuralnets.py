@@ -6,7 +6,7 @@ import math
 import numpy as np
 import pandas as pd
 
-def neural_network(industry):#, prediction_data):
+def neural_network(industry, prediction_data):
     print("+++ Start of pandas' datahandling +++\n")
 
     path = "IndustryResults/" + industry + ".csv"
@@ -60,9 +60,9 @@ def neural_network(industry):#, prediction_data):
     
     #fill predict data 
 
-    # for i in range(len(prediction_data[0])):
-    #     if (math.isnan(prediction_data[0][i])):
-    #         prediction_data[0][i] = fill[i]
+    for i in range(len(prediction_data[0])):
+        if (math.isnan(prediction_data[0][i])):
+            prediction_data[0][i] = fill[i]
 
 
     print("+++ Converting to numpy arrays... +++")
@@ -108,7 +108,7 @@ def neural_network(industry):#, prediction_data):
         # now, rescale inputs -- both testing and training
         X_train = scaler.transform(X_train)
         X_test = scaler.transform(X_test)
-        #prediction_data = scaler.transform(prediction_data)
+        prediction_data = scaler.transform(prediction_data)
 
 
 # scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html 
@@ -150,9 +150,9 @@ def neural_network(industry):#, prediction_data):
 
     # prediction data
     #
-    #unknown_predictions = mlp.predict(prediction_data)
-    #print("  Our Growth Rate predictions: ", unknown_predictions)
+    unknown_predictions = mlp.predict(prediction_data)
+    print("  Our Growth Rate predictions: ", unknown_predictions)
 
-    #return unknown_predictions
+    return accuracy, unknown_predictions
 
 #neural_network("Finance")

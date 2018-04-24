@@ -66,19 +66,22 @@ def alltogether():
     if (checkComp(comp)):
         is_here, industry = checkComp(comp)
         print(industry)
-        # predict_arr = gather_predict_data(comp)
-        # predict_arr[0] = predict_arr[0][2:]
-        # predict_arr = np.asarray(predict_arr)
-        rf.randomforest(industry)
-        nn.neural_network(industry)
-        ad.adaboost(industry)
+        predict_arr = gather_predict_data(comp)
+        predict_arr[0] = predict_arr[0][2:]
+        predict_arr = np.asarray(predict_arr)
+        tree_score, tprediction = rf.randomforest(industry, predict_arr)
+        nn_score, nprediction= nn.neural_network(industry, predict_arr)
+        ad_score, adprediction = ad.adaboost(industry, predict_arr)
         # print(nn.neural_network(industry, predict_arr))
-        # if (tree_score >= nn_score):
-        #     print("tree model")
-        #     return predict0
-        # else:
-        #     print("neural_network model")
-        #     return predict1
+        if (tree_score >= nn_score and tree_score >= ad_score):
+            print("tree model")
+            return tprediction
+        elif (nn_score >= tree_score and nn_score >= ad_score):
+            print("neural_network model")
+            return nprediction
+        else:
+            print("adaboost model")
+            return adprediction
     else:
         print("Job Terminated: Company not found in dataset")
     
