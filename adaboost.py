@@ -194,7 +194,8 @@ def adaboost(industry,prediction_data):
     print(adb_score)
 
     prediction = adb.predict(prediction_data)
-    return adb_score, prediction
+    #return adb_score, prediction
+    return prediction
 
 #adaboost("Technology")
 #adaboost("Energy")
