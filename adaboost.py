@@ -176,21 +176,11 @@ def adaboost(industry,prediction_data):
         else:
             correct_one = num_correct / num_count
         print("percentage of getting " + str(cat) + " right is:"+ str(correct_one))
-<<<<<<< HEAD
-    
-    # accuracy_of(0)
-    # accuracy_of(1)
-    # accuracy_of(2)
-    # accuracy_of(3)
-    # accuracy_of(4)
-    # accuracy_of(5)
-    # accuracy_of(6)
-=======
+
     accuracy_of(-1)
     accuracy_of(0)
     accuracy_of(1)
 
->>>>>>> d692881d9dda48161e618e41825f1431e3a22bd1
     # # feature importances!
     # print()
     # print("adb.feature_importances_ are\n      ", adb.feature_importances_)
