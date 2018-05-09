@@ -2,9 +2,9 @@
 
 <p class="form-prefix">What public company would you like to predict? Please enter a valid company ticker</p>
 
-<form action="/score" method="POST" class="form-inline">
+<form action="/learn" method="POST" class="form-inline">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= hidden_field_tag :letters, @letters %>
+  <%= hidden_field_tag :ticker, @ticker %>
   <div class="input-group input-group">
     <input type="text" name="word" class="form-control">
     <span class="input-group-btn">

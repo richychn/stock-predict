@@ -1,0 +1,24 @@
+{:uriI"‹file://app/assets/backend/good_morning/requirements.txt?type=text/plain&id=eba9c28cc2354d0d6db1f38962656fbc5466426fb419337746ac18494b4ffafa:ET:load_pathI"app/assets/backend;T:filenameI"5app/assets/backend/good_morning/requirements.txt;T:	nameI"good_morning/requirements;T:logical_pathI""good_morning/requirements.txt;T:content_typeI"text/plain;T:sourceI"hnumpy>=1.11.1
+pandas>=0.18.1
+requests>=2.11.1
+six>=1.10.0
+python-dateutil>=2.5.3
+PyMySQL>=0.7.11
+beautifulsoup4>=4.6.0
+
+# for Python 2.7 and 2.6 (environment marker support as of pip 6.0)
+futures ; python_version < '3.3'
+mock ; python_version < '3.3'
+httplib ; python_version < '3.3'
+
+unittest2 ; python_version < '2.7'
+ordereddict ; python_version < '2.7'
+
+
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"Cfile-digest://app/assets/backend/good_morning/requirements.txt;TTF:charsetI"
+utf-8;F:digest"%TÅ/pŒyÑW%ë…B‚]ð®QÚK%fo¹8²´/:lengthih:dependencies_digest"%Ì¾ËëN¶¿­‹a
+%5àsÝïéìIï¶rÇ©Ymj):idI"Eeba9c28cc2354d0d6db1f38962656fbc5466426fb419337746ac18494b4ffafa;F:
+mtimel+~óZ
