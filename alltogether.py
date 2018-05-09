@@ -69,31 +69,32 @@ def alltogether(comp):
     #comp = input("What is the company symbol of the company you want to predict?")
     if (checkComp(comp)):
         is_here, industry = checkComp(comp)
-        print(industry)
+        #print(industry)
         predict_arr = gather_predict_data(comp)
         predict_arr[0] = predict_arr[0][2:]
         predict_arr = np.asarray(predict_arr)
         tree_score, tprediction = rf.randomforest(industry, predict_arr)
         #rf.randomforest(industry, predict_arr)
-        nn_score, nprediction= nn.neural_network(industry, predict_arr)
+        #nn_score, nprediction= nn.neural_network(industry, predict_arr)
         #nn.neural_network(industry, predict_arr)
         ad_score, adprediction = ad.adaboost(industry, predict_arr)
         # print(nn.neural_network(industry, predict_arr))
-        if (tree_score >= nn_score and tree_score >= ad_score):
-            print("tree model")
-            print(tree_score)
+        #if (tree_score >= nn_score and tree_score >= ad_score):
+        if (tree_score >= ad_score):
+            #print("tree model")
+            #print(tree_score)
             #return tree_score, tprediction
-            return [tree_score, tprediction]
-        elif (nn_score >= tree_score and nn_score >= ad_score):
-            print("neural_network model")
-            print(nn_score)
-            #return nn_score, nprediction
-            return [nn_score, nprediction]
+            return ["tree model", tree_score, tprediction]
+        # elif (nn_score >= tree_score and nn_score >= ad_score):
+        #     #print("neural_network model")
+        #     #print(nn_score)
+        #     #return nn_score, nprediction
+        #     return ["neural_network model", nn_score, nprediction]
         else:
-            print("adaboost model")
-            print(ad_score)
+            #print("adaboost model")
+            #print(ad_score)
             #return ad_score, adprediction
-            return [ad_score, adprediction]
+            return ["adaboost model", ad_score, adprediction]
     else:
         print("Job Terminated: Company not found in dataset")
     

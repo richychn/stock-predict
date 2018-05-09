@@ -5,7 +5,10 @@ result = %x[ipython alltogether.py AMZN]
 #result = "[0.50495049504950495, 1]"
 #result = YAML.load(result)
 #result = JSON.parse result 
-#l = result.split('[')
-#puts '[' + l[l.length-1]
+l = result.split(']')
+arr = l[0] + ']'
+result = YAML.load(arr)
+puts result[1]
+#length = result.length
+#puts result[(length/4)..length]
 #puts result[0]
-puts result[result.length]
