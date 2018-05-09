@@ -75,21 +75,21 @@ def alltogether(comp):
         predict_arr = np.asarray(predict_arr)
         tree_score, tprediction = rf.randomforest(industry, predict_arr)
         #rf.randomforest(industry, predict_arr)
-        #nn_score, nprediction= nn.neural_network(industry, predict_arr)
+        nn_score, nprediction= nn.neural_network(industry, predict_arr)
         #nn.neural_network(industry, predict_arr)
         ad_score, adprediction = ad.adaboost(industry, predict_arr)
         # print(nn.neural_network(industry, predict_arr))
-        #if (tree_score >= nn_score and tree_score >= ad_score):
-        if (tree_score >= ad_score):
+        if (tree_score >= nn_score and tree_score >= ad_score):
+        #if (tree_score >= ad_score):
             #print("tree model")
             #print(tree_score)
             #return tree_score, tprediction
             return ["tree model", tree_score, tprediction]
-        # elif (nn_score >= tree_score and nn_score >= ad_score):
-        #     #print("neural_network model")
-        #     #print(nn_score)
-        #     #return nn_score, nprediction
-        #     return ["neural_network model", nn_score, nprediction]
+        elif (nn_score >= tree_score and nn_score >= ad_score):
+            #print("neural_network model")
+            #print(nn_score)
+            #return nn_score, nprediction
+            return ["neural_network model", nn_score, nprediction]
         else:
             #print("adaboost model")
             #print(ad_score)
