@@ -12,6 +12,10 @@ import csv
 import numpy as np
 import datetime
 
+import sys
+
+first_arg = sys.argv[1]
+
 def checkComp(comp):
     """
     This function takes in a company ticker as an input. It first checks 
@@ -59,10 +63,10 @@ def gather_predict_data(comp):
     return output
     
 
-def alltogether():
+def alltogether(comp):
     """
     """
-    comp = input("What is the company symbol of the company you want to predict?")
+    #comp = input("What is the company symbol of the company you want to predict?")
     if (checkComp(comp)):
         is_here, industry = checkComp(comp)
         print(industry)
@@ -77,18 +81,27 @@ def alltogether():
         # print(nn.neural_network(industry, predict_arr))
         if (tree_score >= nn_score and tree_score >= ad_score):
             print("tree model")
-            return tree_score, tprediction
+            print(tree_score)
+            #return tree_score, tprediction
+            return [tree_score, tprediction]
         elif (nn_score >= tree_score and nn_score >= ad_score):
             print("neural_network model")
-            return nn_score, nprediction
+            print(nn_score)
+            #return nn_score, nprediction
+            return [nn_score, nprediction]
         else:
             print("adaboost model")
-            return ad_score, adprediction
+            print(ad_score)
+            #return ad_score, adprediction
+            return [ad_score, adprediction]
     else:
         print("Job Terminated: Company not found in dataset")
     
     
-
+if True:
+    print(alltogether(first_arg))
+    #x = [1,2]
+   # print(str(x))
 
 
     
