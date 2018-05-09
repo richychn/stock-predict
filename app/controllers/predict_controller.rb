@@ -6,7 +6,7 @@ class PredictController < ApplicationController
 
   def learn
   	@input = params[:ticker]
-    result = %x[ipython app/assets/backend/alltogether.py #{@input}]
+    result = %x[ipython backend/alltogether.py #{@input}]
     l = result.split(']')
     l = l[l.length-2]
     l = l.split('[')
