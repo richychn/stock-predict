@@ -1,0 +1,14 @@
+Started GET "/" for 127.0.0.1 at 2018-05-09 13:19:12 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 43ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 13:44:12 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 610ms (Views: 599.0ms | ActiveRecord: 0.0ms)
+
+
