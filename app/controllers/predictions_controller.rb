@@ -1,9 +1,8 @@
 require 'yaml'
 
-class PredictController < ApplicationController
+class PredictionsController < ApplicationController
   def new
-  	#nothing to do 
-    @ticker = ""
+    @prediction = Prediction.new
   end
 
   def learn
