@@ -80,7 +80,7 @@ def alltogether():
             return ["tree model", tree_score, tprediction]
         elif (nn_score >= tree_score and nn_score >= ad_score):
             print("neural_network model")
-            return ["neural network model, nn_score, nprediction]
+            return ["neural network model", nn_score, nprediction]
         else:
             print("adaboost model")
             return ["adaboost", ad_score, adprediction]
