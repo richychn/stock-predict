@@ -7,12 +7,12 @@ import numpy as np
 import pandas as pd
 
 def neural_network(industry, prediction_data):
-    print("+++ Start of pandas' datahandling +++\n")
+    #print("+++ Start of pandas' datahandling +++\n")
 
     path = "IndustryResults/" + industry + ".csv"
     df = pd.read_csv(path, header=0)
-    df.head()
-    df.info()
+    #df.head()
+    #df.info()
 
     def transform_target(s):
         """ from string to number
@@ -65,7 +65,7 @@ def neural_network(industry, prediction_data):
             prediction_data[0][i] = fill[i]
 
 
-    print("+++ Converting to numpy arrays... +++")
+    #print("+++ Converting to numpy arrays... +++")
     X_all = df.iloc[:,2:28].values   #features are column 2-27
     y_all = df["growth_rate"].values  #target column
 
@@ -124,34 +124,34 @@ def neural_network(industry, prediction_data):
 
 
 
-    print("\n\n++++++++++  TRAINING  +++++++++++++++\n\n")
+    #print("\n\n++++++++++  TRAINING  +++++++++++++++\n\n")
     mlp.fit(X_train, y_train)
 
 
-    print("\n\n++++++++++++  TESTING  +++++++++++++\n\n")
-    print("Training set score (full_digits): %f" % mlp.score(X_train, y_train))
+    #print("\n\n++++++++++++  TESTING  +++++++++++++\n\n")
+    #print("Training set score (full_digits): %f" % mlp.score(X_train, y_train))
     accuracy = mlp.score(X_test, y_test)
-    print("Test set score (full_digits): %f" % accuracy)
+   # print("Test set score (full_digits): %f" % accuracy)
 
 
     # let's see the coefficients -- the nnet weights!
     # CS = [coef.shape for coef in mlp.coefs_]
     # print(CS)
 
-    print("\n\n++++++++++++  Predictions for fully Filled Digits Obervations  +++++++++++++\n\n")
+    #print("\n\n++++++++++++  Predictions for fully Filled Digits Obervations  +++++++++++++\n\n")
     # predictions:
     predictions = mlp.predict(X_test)
     from sklearn.metrics import classification_report,confusion_matrix
-    print("\nConfusion matrix:")
-    print(confusion_matrix(y_test,predictions))
+    #print("\nConfusion matrix:")
+    #print(confusion_matrix(y_test,predictions))
 
-    print("\nClassification report")
-    print(classification_report(y_test,predictions))
+    #print("\nClassification report")
+    #print(classification_report(y_test,predictions))
 
     # prediction data
     #
     unknown_predictions = mlp.predict(prediction_data)
-    print("  Our Growth Rate predictions: ", unknown_predictions)
+    #print("  Our Growth Rate predictions: ", unknown_predictions)
 
     #return accuracy, unknown_predictions
     return accuracy,unknown_predictions

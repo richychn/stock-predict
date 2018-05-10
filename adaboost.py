@@ -13,14 +13,15 @@ def adaboost(industry,prediction_data):
         try:
             from sklearn.cross_validation import cross_val_score
         except:
-            print("No cross_val_score!")
+            return
+            #print("No cross_val_score!")
 
-    print("+++ Start of pandas' datahandling +++\n")
+   # print("+++ Start of pandas' datahandling +++\n")
 
     path = "IndustryResults/" + industry + ".csv"
     df = pd.read_csv(path, header=0)
-    df.head()
-    df.info()
+    #df.head()
+    #df.info()
 
     #feeature engineering would occur here (in the future):
     def transform_target(s):
@@ -74,11 +75,11 @@ def adaboost(industry,prediction_data):
         if (math.isnan(prediction_data[0][i])):
             prediction_data[0][i] = fill[i]
 
-    print("\n+++ End of pandas +++\n")
+    #print("\n+++ End of pandas +++\n")
 
-    print("+++ Start of numpy/scikit-learn +++\n")
+    #print("+++ Start of numpy/scikit-learn +++\n")
 
-    print("+++++ Adaboost +++++\n\n")
+   # print("+++++ Adaboost +++++\n\n")
 
     #Data needs to be in numpy arrays, converts dataframe to numpy array
     X_all = df.iloc[:,2:28].values   #features are column 2-27
@@ -129,8 +130,8 @@ def adaboost(industry,prediction_data):
 
         adb = ensemble.AdaBoostClassifier(n_estimators=n_est)
         scores = cross_val_score(adb, X_train, y_train, cv=5)
-        print("CV scores:", scores)
-        print("CV scores' average:", scores.mean())
+        #print("CV scores:", scores)
+        #print("CV scores' average:", scores.mean())
         average_cv_scores_ADB = scores.mean()
         #comparison
         if (average_cv_scores_ADB > highest_CV_score):
@@ -148,19 +149,19 @@ def adaboost(industry,prediction_data):
     adb = adb.fit(X_train, y_train)
 
     #prediction
-    print("AdaBoost predictions:\n")
+    #print("AdaBoost predictions:\n")
     predicted_labels = adb.predict(X_test)
     answer_labels = y_test
 
-    # print result
-    s = "{0:<11} | {1:<11}".format("Predicted","Answer")
-    #  arg0: left-aligned, 11 spaces, string, arg1: ditto
-    print(s)
-    s = "{0:<11} | {1:<11}".format("-------","-------")
-    print(s)
-    for p, a in zip( predicted_labels, answer_labels ):
-        s = "{0:<11} | {1:<11}".format(p,a)
-        print(s)
+    # # print result
+    # s = "{0:<11} | {1:<11}".format("Predicted","Answer")
+    # #  arg0: left-aligned, 11 spaces, string, arg1: ditto
+    # print(s)
+    # s = "{0:<11} | {1:<11}".format("-------","-------")
+    # print(s)
+    # for p, a in zip( predicted_labels, answer_labels ):
+    #     s = "{0:<11} | {1:<11}".format(p,a)
+    #     print(s)
 
     #Calculating accuracy for category 1:
     def accuracy_of(cat):
@@ -175,7 +176,7 @@ def adaboost(industry,prediction_data):
             correct_one = 0
         else:
             correct_one = num_correct / num_count
-        print("percentage of getting " + str(cat) + " right is:"+ str(correct_one))
+        #print("percentage of getting " + str(cat) + " right is:"+ str(correct_one))
 
     accuracy_of(-1)
     accuracy_of(0)
@@ -189,9 +190,9 @@ def adaboost(industry,prediction_data):
 
     # print("adb.decision_function on X_train is", adb.decision_function(X_train))
 
-    print("confidence score:")
+    #print("confidence score:")
     adb_score = adb.score(X_test, y_test, sample_weight=None)
-    print(adb_score)
+    #print(adb_score)
 
     prediction = adb.predict(prediction_data)
     #return adb_score, prediction
