@@ -6,12 +6,12 @@ first_arg = sys.argv[1]
 def greetings(word1=first_arg):#, word2=second_arg):
     #print("{} {}".format(word1, word2))
     #x = [word1, word2]
-    x = str(word1)
+    x = word1
     #y = int(word2)
 
-    return [x, x]
+    return x
 
 if __name__ == "__main__":
-   print(greetings())
+   greetings()
    #greetings()
    # greetings("Bonjour", "monde")
