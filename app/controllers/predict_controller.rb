@@ -3,11 +3,13 @@ require 'yaml'
 class PredictController < ApplicationController
   def new
   	#nothing to do 
+    @ticker = ""
   end
 
   def learn
-  	@input = params[:ticker]
-    @result = %x[ipython python_test.py #{@input}][0..5]
+  	@ticker = params[:ticker]
+    #@test = "hello"
+    result = %x[ipython alltogether.py #{@ticker}]#[0..5]
     #l = result.split(']')
     #puts result
     #@x = l[l.length-2]

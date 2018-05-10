@@ -66,5 +66,5 @@ def create_industry_csv(industry):
 #   create_industry_csv(ind)
   # print(ind)
 
-create_industry_csv("Energy")
+#create_industry_csv("Energy")
 

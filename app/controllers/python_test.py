@@ -9,9 +9,9 @@ def greetings(word1=first_arg):#, word2=second_arg):
     x = word1
     #y = int(word2)
 
-    return x
+    return [x, x]
 
 if __name__ == "__main__":
-   greetings()
+   print(greetings())
    #greetings()
    # greetings("Bonjour", "monde")
