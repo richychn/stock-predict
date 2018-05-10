@@ -1,0 +1,14 @@
+<ul class="list-unstyled" id="predictions">
+  <% @predictions.each do |prediction| %>
+    <li>
+      <h2><%= link_to prediction.ticker, prediction_path(prediction.id)%>
+      </h2>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to new_prediction_path do %>
+  <i class="fa fa-plus"></i> Predict another company!
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Prediction</h1>
+
+<%= @output %>
+
+<hr>
+<%= link_to predictions_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+<br>
+<%= link_to prediction_path(@prediction.id), method: :delete, data: { confirm: "Delete #{@prediction.ticker}?" } do %>
+       <i class="fa fa-trash-o" aria-hidden="true"></i>
+       Delete this prediction
+<% end %>
