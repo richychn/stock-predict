@@ -65,3 +65,359 @@ Processing by PredictController#learn as HTML
 Completed 200 OK in 4180ms (Views: 25.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:28:56 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 289ms (Views: 279.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:29:00 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"myon6fZfP9JQwZrT2V+fxhHYNQxdUquQIEjZ/kAday6rbCjTjebiQdo7zFxgX514taKLaC/LryWykLO6B16lRQ==", "ticker"=>"", "word"=>"AAPL"}
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:29:02 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"myon6fZfP9JQwZrT2V+fxhHYNQxdUquQIEjZ/kAday6rbCjTjebiQdo7zFxgX514taKLaC/LryWykLO6B16lRQ==", "ticker"=>"", "word"=>"AAPL"}
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:29:05 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"myon6fZfP9JQwZrT2V+fxhHYNQxdUquQIEjZ/kAday6rbCjTjebiQdo7zFxgX514taKLaC/LryWykLO6B16lRQ==", "ticker"=>"", "word"=>"AAPL"}
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:29:07 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"myon6fZfP9JQwZrT2V+fxhHYNQxdUquQIEjZ/kAday6rbCjTjebiQdo7zFxgX514taKLaC/LryWykLO6B16lRQ==", "ticker"=>"", "word"=>"AAPL"}
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:29:09 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"myon6fZfP9JQwZrT2V+fxhHYNQxdUquQIEjZ/kAday6rbCjTjebiQdo7zFxgX514taKLaC/LryWykLO6B16lRQ==", "ticker"=>"", "word"=>"AAPL"}
+Completed 500 Internal Server Error in 67590ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/predict_controller.rb:12:in `learn'
+Completed 500 Internal Server Error in 72136ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/predict_controller.rb:12:in `learn'
+Completed 500 Internal Server Error in 65202ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 69597ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/predict_controller.rb:12:in `learn'
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+Completed 500 Internal Server Error in 74866ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/predict_controller.rb:12:in `learn'
+app/controllers/predict_controller.rb:12:in `learn'
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:30:16 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"myon6fZfP9JQwZrT2V+fxhHYNQxdUquQIEjZ/kAday6rbCjTjebiQdo7zFxgX514taKLaC/LryWykLO6B16lRQ==", "ticker"=>"", "word"=>"AAPL"}
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/predict_controller.rb:12:in `learn'
+Started GET "/" for 127.0.0.1 at 2018-05-09 16:36:11 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 21ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:36:15 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 322ms (Views: 319.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:36:18 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"jwtJH+tydb0yxhqYLNqfhnvUrJv+C/EH7oa6JnqtnV+/TUYlkMuoLrg8TBeV2p04364S/4yS9bJ8XtBiPe5TNA==", "ticker"=>"", "word"=>"AAPL"}
+Completed 500 Internal Server Error in 99420ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/predict_controller.rb:12:in `learn'
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:38:38 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 245ms (Views: 233.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:38:42 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"MJWMkm6bIWZF7/6XL//XupkUPZaebiAjNwUAyiXE8DMA04OoFSL89c8VqBiW/9UEPW6D8uz3JJal3WqOYoc+WA==", "ticker"=>"", "word"=>"AAPL"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:44:58 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 236ms (Views: 227.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:45:03 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"0n/B6OiIZB+C4xjAEOxd8Wq4Lw+pn86L3TdJ3ApKASniOc7SkzG5jAgZTk+p7F9PzsKRa9sGyj5P7yOYTQnPQg==", "ticker"=>"", "word"=>"Hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 818ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:45:55 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/learn" for 127.0.0.1 at 2018-05-09 16:46:13 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/learn"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:46:18 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 222ms (Views: 219.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:46:23 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"/A2DBFG5k3IQpDDVvJeDCD2MDTtpDMv0o7pD61Cb3ubMS4w+KgBO4ZpeZloFl4G2mfazXxuVz0ExYimvF9gQjQ==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 874ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:48:20 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 201ms (Views: 190.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:48:24 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"zMP/Ge669kqm48iHOCnVn+97wqnBNq50abgArNaEudD8hfAjlQMr2SwZngiBKdchSwF8zbOvqsH7YGrokcd3uw==", "ticker"=>"", "word"=>"hello"}
+Completed 500 Internal Server Error in 622ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predict_controller.rb:14:in `learn'
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:49:18 -0700
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:49:28 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:49:36 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 238ms (Views: 228.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:49:39 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:49:43 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"/+zpqzz0unL8jE818H85DlLwgYFEvV84sDCZ/dlAhFvPquaRR01n4XZ2GbpJfzuw9oo/5TYkW40i6PO5ngNKMA==", "ticker"=>"", "word"=>"hello"}
+Completed 500 Internal Server Error in 797ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predict_controller.rb:14:in `learn'
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:57:21 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 245ms (Views: 234.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:57:25 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"SzAo3TrKSq6oXZTTj/z21pcYWyukRmeB/hgMqXsXXxJ7difnQXOXPSKnwlw2/PRoM2LlT9bfYzRswGbtPFSReQ==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 875ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 16:58:50 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 16:58:58 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"jdgNzv5q9pg1Swiv5pit+eP/cUQfRwZ9nCSP291HWBK9ngL0hdMrC7+xXiBfmK9HR4XPIG3eAsgO/OWfmgSWeQ==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 797ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:02:20 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 241ms (Views: 230.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 17:02:23 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"nkUia/RnCVSCQuYG1evVi4XIahv2lRSoDvt/SGmorcauAy1Rj97Uxwi4sIls69c1IbLUf4QMEB2cIxUMLutjrQ==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 915ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:08:41 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 240ms (Views: 229.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 17:08:45 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"1elshn1yn4kTqZTp66Ocz22gGJhMMiXSsP+Qqzb9DH7lr2O8BstCGplTwmZSo55xydqm/D6rIWciJ/rvcb7CFQ==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 851ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:08:57 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:12:45 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 258ms (Views: 248.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 17:12:49 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"M4VvylnvokDE3buCa0vi15LtdPTFI6mSpi/wdMPPCDUDw2DwIlZ/004n7Q3SS+BpNpfKkLe6rSc095owhIzGXg==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 861ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:13:42 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 17:13:45 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"JBm1VAuvbNGwCjRz6BMoodpoLmaRtdXpKpOcOguHJZYUX7pucBaxQjrwYvxREyoffhKQAuMs0Vy4S/Z+TMTr/Q==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 797ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:14:13 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 17:14:17 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"pzRRNhgZAHrl/9cR55QY5KPOQhc0lqztUWjInbH4IbuXcl4MY6Dd6W8FgZ5elBpaB7T8c0YPqFjDsKLZ9rvv0A==", "ticker"=>"", "word"=>"hello"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 804ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-05-09 17:21:47 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 265ms (Views: 253.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 17:21:53 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"k7nKSk8D9d97J8PVnNRCOpTG1GPn6UeZx/sc4vJ4asWj/8VwNLooTPHdlVol1ECEMLxqB5VwQyxVI3amtTukrg==", "ticker"=>"", "word"=>"helloaefaef"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 857ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
