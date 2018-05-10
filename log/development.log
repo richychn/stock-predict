@@ -743,3 +743,54 @@ Processing by PredictController#learn as HTML
 Completed 200 OK in 2429ms (Views: 18.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/new" for 127.0.0.1 at 2018-05-09 18:32:08 -0700
+Processing by PredictController#new as HTML
+  Rendering predict/new.html.erb within layouts/application
+  Rendered predict/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 251ms (Views: 241.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 18:32:12 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"w5NtQ5EP9qogEiUmBJLkPp0RhegFdDoEYkQTRWSJJnPz1WJ56rYrOaroc6m9kuaAOWs7jHftPrHwnHkBI8roGA==", "ticker"=>"AAPL"}
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 18:32:13 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"w5NtQ5EP9qogEiUmBJLkPp0RhegFdDoEYkQTRWSJJnPz1WJ56rYrOaroc6m9kuaAOWs7jHftPrHwnHkBI8roGA==", "ticker"=>"AAPL"}
+Completed 500 Internal Server Error in 64715ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predict_controller.rb:18:in `learn'
+Completed 500 Internal Server Error in 63889ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predict_controller.rb:18:in `learn'
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 18:34:00 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"w5NtQ5EP9qogEiUmBJLkPp0RhegFdDoEYkQTRWSJJnPz1WJ56rYrOaroc6m9kuaAOWs7jHftPrHwnHkBI8roGA==", "ticker"=>"AAPL"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59397ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 18:36:30 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"w5NtQ5EP9qogEiUmBJLkPp0RhegFdDoEYkQTRWSJJnPz1WJ56rYrOaroc6m9kuaAOWs7jHftPrHwnHkBI8roGA==", "ticker"=>"AAPL"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 294039ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/learn" for 127.0.0.1 at 2018-05-09 18:41:32 -0700
+Processing by PredictController#learn as HTML
+  Parameters: {"authenticity_token"=>"w5NtQ5EP9qogEiUmBJLkPp0RhegFdDoEYkQTRWSJJnPz1WJ56rYrOaroc6m9kuaAOWs7jHftPrHwnHkBI8roGA==", "ticker"=>"AAPL"}
+  Rendering predict/learn.html.erb within layouts/application
+  Rendered predict/learn.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57973ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
