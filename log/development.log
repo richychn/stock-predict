@@ -1637,3 +1637,1983 @@ Completed 500 Internal Server Error in 60605ms (ActiveRecord: 0.0ms)
 ArgumentError (wrong number of arguments (given 0, expected 1..2)):
   
 app/controllers/predictions_controller.rb:18:in `create'
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 22:20:42 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 228ms (Views: 212.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:20:58 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/1" for 127.0.0.1 at 2018-05-09 22:21:01 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `article_id' for #<PredictionsController:0x00007fb3f95e04c0>):
+  
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:21:11 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 22:21:13 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 22:22:48 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tFsixTVeAvdooW+m9WFeeNmu3+0kjNUNYwXDwSZ5hR+EHS3/TuffZOJbOSlMYVzGfdRhiVYV0bjx3amFYTpLdA==", "ticker"=>"AMZN"}
+Completed 500 Internal Server Error in 195103ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 22:26:32 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 239ms (Views: 226.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 22:26:35 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 22:26:38 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"j0BRx0A54w1pczqCGIUWrZCCUJTh0rW0upNaGG7gp2u/Bl79O4A+nuOJbA2hhRQTNPju8JNLsQEoSzBcKaNpAA==", "ticker"=>"AMZN"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (1.1ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "AMZN"], ["model", "tree model"], ["confidence", 0.5123762376237624], ["result", 1], ["created_at", "2018-05-10 05:27:45.855885"], ["updated_at", "2018-05-10 05:27:45.855885"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/2
+Completed 302 Found in 67180ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/predictions/2" for 127.0.0.1 at 2018-05-09 22:27:45 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `article_id' for #<PredictionsController:0x00007fedaaaff7e0>):
+  
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 22:31:19 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WMBT2KSoTuf1ctewtvhtqC1Nm/+9OvKp4LsAt9Hdjtxohlzi3xGTdH+IgT8P+G8WiTclm8+j9hxyY2rzlp5Atw==", "ticker"=>"AMZN"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (0.5ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "AMZN"], ["model", "tree model"], ["confidence", 0.5371287128712872], ["result", 1], ["created_at", "2018-05-10 05:32:37.219388"], ["updated_at", "2018-05-10 05:32:37.219388"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/3
+Completed 302 Found in 67793ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:32:37 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:43
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `ticker' for nil:NilClass):
+  
+app/controllers/predictions_controller.rb:47:in `output'
+app/controllers/predictions_controller.rb:31:in `show'
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:33:11 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:43
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/predictions_controller.rb:46:in `output'
+app/controllers/predictions_controller.rb:53:in `output'
+app/controllers/predictions_controller.rb:31:in `show'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:33:21 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:33:24 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:43
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/predictions_controller.rb:46:in `output'
+app/controllers/predictions_controller.rb:53:in `output'
+app/controllers/predictions_controller.rb:31:in `show'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:34:58 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 254ms (Views: 242.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 22:35:01 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 22:35:05 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"uu5ljZO6TF++/dXOOGcjx9XXC81bBKWL83URAbVI4lmKqGq36AORzDQHg0GBZyF5ca21qSmdoT5hrXtF8gssMg==", "ticker"=>"AMZN"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (1.0ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "AMZN"], ["model", "tree model"], ["confidence", 0.5272277227722773], ["result", 1], ["created_at", "2018-05-10 05:36:12.468797"], ["updated_at", "2018-05-10 05:36:12.468797"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/4
+Completed 302 Found in 66485ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/predictions/4" for 127.0.0.1 at 2018-05-09 22:36:12 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:43
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/predictions_controller.rb:46:in `output'
+app/controllers/predictions_controller.rb:53:in `output'
+app/controllers/predictions_controller.rb:31:in `show'
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:47:43 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:43
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:47
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/predictions_controller.rb:46:in `output'
+app/controllers/predictions_controller.rb:54:in `output'
+app/controllers/predictions_controller.rb:31:in `show'
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:49:53 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:43
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 25.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:52:07 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/predictions_controller.rb:58:in `output'
+app/controllers/predictions_controller.rb:38:in `show'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:52:59 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 43ms (Views: 35.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/predictions/4" for 127.0.0.1 at 2018-05-09 22:53:01 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `output' for #<PredictionsController:0x00007f813eae0ad0>):
+  
+app/controllers/predictions_controller.rb:38:in `show'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:54:05 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:54:06 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 41.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/predictions/3" for 127.0.0.1 at 2018-05-09 22:54:48 -0700
+Processing by PredictionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P5m8WFrfs+ZDr4cwfqNXzO9ftGZpKcMLY/TgkzL4WzkP37NiIWZudclV0b/Ho1VySyUKAhuwx77xLIrXdbuVUg==", "id"=>"3"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:48
+  [1m[36mPrediction Destroy (1.1ms)[0m  [1m[31mDELETE FROM "predictions" WHERE "predictions"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/predictions_controller.rb:48
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:48
+Redirected to http://localhost:3000/predictions/3
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/predictions/3" for 127.0.0.1 at 2018-05-09 22:54:48 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Prediction with 'id'=3):
+  
+app/controllers/predictions_controller.rb:55:in `prediction_id'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:55:18 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/4" for 127.0.0.1 at 2018-05-09 22:55:31 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/predictions/4" for 127.0.0.1 at 2018-05-09 22:57:17 -0700
+Processing by PredictionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YIhSbrg/Z1G2sc4poDAjnFteYpyOiUj22hJ/B4XLBn1Qzl1Uw4a6wjxLmKYZMCEi/yTc+PwQTENIyhVDwojIFg==", "id"=>"4"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:48
+  [1m[36mPrediction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "predictions" WHERE "predictions"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/predictions_controller.rb:48
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:48
+Redirected to http://localhost:3000/predictions/4
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/predictions/4" for 127.0.0.1 at 2018-05-09 22:57:17 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+Completed 404 Not Found in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Prediction with 'id'=4):
+  
+app/controllers/predictions_controller.rb:55:in `prediction_id'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 22:57:45 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/1" for 127.0.0.1 at 2018-05-09 22:57:47 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 22:59:12 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 246ms (Views: 234.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 22:59:17 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 53ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 22:59:35 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7tvHji3wMCX17bYD4Rr1w47c5g6vsnXUPNcwtXoDOunenci0Vknttn8X4IxYGvd9KqZYat0rcWGuD1rxPUD0gg==", "ticker"=>"GOOGL"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (0.7ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "GOOGL"], ["model", "tree model"], ["confidence", 0.5753012048192772], ["result", 1], ["created_at", "2018-05-10 06:00:38.215848"], ["updated_at", "2018-05-10 06:00:38.215848"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/5
+Completed 302 Found in 62385ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/predictions/5" for 127.0.0.1 at 2018-05-09 23:00:38 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 61ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 23:02:58 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:03:13 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:03:51 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:04:26 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zlwypV+oggGWn7OiecGrVTXpnKMQ7vUibOTOrKlF183+Gj2fJBFfkhxl5S3AwanrkZMix2J38Zf+PKTo7gYZpg==", "ticker"=>"BABA"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (1.0ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "BABA"], ["model", "tree model"], ["confidence", 0.5128205128205128], ["result", 1], ["created_at", "2018-05-10 06:04:58.967989"], ["updated_at", "2018-05-10 06:04:58.967989"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/6
+Completed 302 Found in 32952ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/predictions/6" for 127.0.0.1 at 2018-05-09 23:04:58 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:05:24 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/2" for 127.0.0.1 at 2018-05-09 23:05:26 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:05:29 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/1" for 127.0.0.1 at 2018-05-09 23:05:34 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:05:35 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/6" for 127.0.0.1 at 2018-05-09 23:05:36 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:05:41 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:05:42 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 23:05:59 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 52ms (Views: 46.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:07:08 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 23:08:26 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/predictions/1" for 127.0.0.1 at 2018-05-09 23:08:34 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:08:38 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:08:39 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:08:54 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"D0sZf/FOKUWKs5R5Lxd/vsqS2KDAfJJx9gmjvqw3HIo/DRZFivf01gBJwvaWF30AbuhmxLLllsRk0cn663TS4Q==", "ticker"=>"INTC"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (1.0ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "INTC"], ["model", "tree model"], ["confidence", 0.5692771084337349], ["result", 1], ["created_at", "2018-05-10 06:09:55.926962"], ["updated_at", "2018-05-10 06:09:55.926962"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/7
+Completed 302 Found in 61016ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/predictions/7" for 127.0.0.1 at 2018-05-09 23:09:55 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:11:55 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 56ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:34:54 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:34:58 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0ZZvxbJAjNq5dIMst3jWtrXpwsLuedOZTCoRyWrULVfh0GD/yflRSTOO1aMOeNQIEZN8ppzg1yze8nuNLZfjPA==", "ticker"=>"aaaa"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[36mPrediction Create (2.1ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "aaaa"], ["model", "N"], ["confidence", 0.0], ["result", 0], ["created_at", "2018-05-10 06:35:01.641351"], ["updated_at", "2018-05-10 06:35:01.641351"]]
+  ↳ app/controllers/predictions_controller.rb:26
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:26
+Redirected to http://localhost:3000/predictions/8
+Completed 302 Found in 3425ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/predictions/8" for 127.0.0.1 at 2018-05-09 23:35:01 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:55
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:35:13 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:48:53 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/apple/Desktop/github/stock-predict/app/controllers/predictions_controller.rb:65: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/predictions_controller.rb:65: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:49:53 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 269ms (Views: 264.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/8" for 127.0.0.1 at 2018-05-09 23:50:06 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/predictions/8" for 127.0.0.1 at 2018-05-09 23:50:09 -0700
+Processing by PredictionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"a0QBzdIs5ZZHnT+3UuJTH+r7U68ZltKICloHs6RolxNbAg73qZU4Bc1naTjr4lGhToHty2sP1j2Ygm334ytZeA==", "id"=>"8"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:50
+  [1m[36mPrediction Destroy (0.7ms)[0m  [1m[31mDELETE FROM "predictions" WHERE "predictions"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/predictions_controller.rb:50
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:50
+Redirected to http://localhost:3000/predictions
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:50:09 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:50:12 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:50:14 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xjgO1rqSyJ5l4+eXaZFrZ9jcSiSlWHHCln/9gvLcdGD2fgHswSsVDe8ZsRjQkWnZfKb0QNfBdXcEp5fGtZ+6Cw==", "ticker"=>"aaaa"}
+Completed 500 Internal Server Error in 3603ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `error_path' for #<PredictionsController:0x00007fd5662253d8>
+Did you mean?  error_path_url):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:51:20 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xjgO1rqSyJ5l4+eXaZFrZ9jcSiSlWHHCln/9gvLcdGD2fgHswSsVDe8ZsRjQkWnZfKb0QNfBdXcEp5fGtZ+6Cw==", "ticker"=>"aaaa"}
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:51:23 -0700
+Redirected to http://localhost:3000/predictions/error
+Completed 302 Found in 3597ms (ActiveRecord: 0.0ms)
+
+
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"f3J7ti1t0dM4g6HtgkkKRJQ6cTtg3l03/c3nekbnv2BPNHSMVtQMQLJ592I7SQj6MEDPXxJHWYJvFY0+AaRxCw==", "ticker"=>"aaaa"}
+Redirected to http://localhost:3000/predictions/error
+Completed 302 Found in 2467ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions/error" for 127.0.0.1 at 2018-05-09 23:51:26 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"error"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+Completed 404 Not Found in 8ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Prediction with 'id'=error):
+  
+app/controllers/predictions_controller.rb:62:in `prediction_id'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:53:36 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"f3J7ti1t0dM4g6HtgkkKRJQ6cTtg3l03/c3nekbnv2BPNHSMVtQMQLJ592I7SQj6MEDPXxJHWYJvFY0+AaRxCw==", "ticker"=>"aaaa"}
+Completed 500 Internal Server Error in 3207ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `error_path' for #<PredictionsController:0x00007fd562455260>
+Did you mean?  error_path_url):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started GET "/predictions/error" for 127.0.0.1 at 2018-05-09 23:54:37 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"error"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+Completed 404 Not Found in 20ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Prediction with 'id'=error):
+  
+app/controllers/predictions_controller.rb:62:in `prediction_id'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 23:55:41 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:55:43 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:55:47 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1VmrZLKupq8aM776y+K4aCso/3qZtwhMc8M1N+EkedPlH6ReyRd7PJDJ6HVy4rrWj1JBHusuDPnhG19zpme3uA==", "ticker"=>"aaaa"}
+Redirected to http://localhost:3000/predictions
+Completed 302 Found in 3781ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-09 23:55:51 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.4ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:57:13 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 17.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:57:17 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/Kj+Fd0WCkurb19i1bmcvkneQHEWTzqE4sAK59RBzU3M7vEvpq/X2CGVCe1suZ4A7aT+FWTWPjFwGGCjkwIDJg==", "ticker"=>"aaaa"}
+Completed 500 Internal Server Error in 3503ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `error_path' for #<PredictionsController:0x00007fd5670561c8>
+Did you mean?  error_path_url):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started GET "/predictions/error" for 127.0.0.1 at 2018-05-09 23:57:37 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"error"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Prediction with 'id'=error):
+  
+app/controllers/predictions_controller.rb:62:in `prediction_id'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-09 23:59:23 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-09 23:59:25 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-09 23:59:27 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"8OBdkyncZ5pU+Ve5xfoxUORBFGnJIV/9Khh108W2o9TAplKpUmW6Cd4DATZ8+jPuQDuqDbu4W0i4wB+XgvVtvw==", "ticker"=>"aaaa"}
+Completed 500 Internal Server Error in 3812ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `error_path_url' for #<PredictionsController:0x00007fd562612918>):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:00:22 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"mksTvlaI1B3T36BpZQfg4OsrHxLzeVocenfG79NzyyWqDRyELTEJjlkl9ubcB+JeT1GhdoHgXqnor6yrlDAFTg==", "ticker"=>"aaaa"}
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3862ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:00:26 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:00:33 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (3.1ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 54ms (Views: 44.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:01:49 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.4ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 238ms (Views: 224.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:01:51 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:01:53 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"pi2Prn7E+NHpMbSBpEQSy6lABPMtdn7+x19pP70i+4KWa4CUBX0lQmPL4g4dRBB1DTq6l1/vektVhwN7+mE16Q==", "ticker"=>"aaaa"}
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2600ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:01:56 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:02:00 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:02:02 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:02:03 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5hEVa3OYQfG6deHDbTDWpI6WwygLyhcqY0WyFBRLpPfWVxpRCCGcYjCPt0zUMNQaKux9THlTE5/xndhQUwhqnA==", "ticker"=>""}
+Completed 500 Internal Server Error in 2505ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:05:24 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 263ms (Views: 251.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:05:27 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:05:29 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"LHh6icv3oFiP3nnsYJ1h2+jZcaheuztSVRRvC53pSL8cPnWzsE59ywUkL2PZnWNlTKPPzCwiP+fHzAVP2qqG1A==", "ticker"=>"a"}
+Completed 500 Internal Server Error in 2669ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `legnth' for "None":String
+Did you mean?  length):
+  
+app/controllers/predictions_controller.rb:19:in `create'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:05:55 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"b7CyuupSmcWKPgONJNsUaiGfxyE4Mhfh9aBYJNsD9dtf9r2AketEVgDEVQKd2xbUheV5RUqrE1RneDJgnEA7sA==", "ticker"=>"a"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:25
+  [1m[36mPrediction Create (0.5ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "a"], ["model", "N"], ["confidence", 0.0], ["result", 0], ["created_at", "2018-05-10 07:06:08.400485"], ["updated_at", "2018-05-10 07:06:08.400485"]]
+  ↳ app/controllers/predictions_controller.rb:25
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:25
+Redirected to http://localhost:3000/predictions/9
+Completed 302 Found in 2582ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/predictions/9" for 127.0.0.1 at 2018-05-10 00:06:08 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:06:35 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.5ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 41ms (Views: 29.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/predictions/9" for 127.0.0.1 at 2018-05-10 00:06:37 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/predictions/9" for 127.0.0.1 at 2018-05-10 00:06:39 -0700
+Processing by PredictionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cVbCp8VA+c65ga2rn0XbalGaXruclid1/bpNIR/0nsBBEM2dvvkkXTN7+yQmRdnU9eDg3+4PI8BvYidlWLdQqw==", "id"=>"9"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:50
+  [1m[36mPrediction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "predictions" WHERE "predictions"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/predictions_controller.rb:50
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:50
+Redirected to http://localhost:3000/predictions
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:06:39 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:06:41 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:06:44 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"c3D3fGerTJ9Gc7KtktJ0QHGVcSPVSdIbMzHzdE7AJbRDNvhGHBKRDMyJ5CIr0nb+1e/PR6fQ1q6h6ZkwCYPr3w==", "ticker"=>"aaaa"}
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2498ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:06:46 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:06:49 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.7ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:06:50 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:06:52 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"omICxEr9CrIg7sSQJkXMePwUIRsxlQHIGuw0IBTA9B6SJA3+MUTXIaoUkh+fRc7GWG6ff0MMBX2INF5kU4M6dQ==", "ticker"=>"aa"}
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2450ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:06:55 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:06:56 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.7ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:07:02 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:07:31 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"UDXFUuztOVGNpRB1oVkJglPCcJHdjAsHW4enihViuHBgc8pol1TkwgdfRvoYWQs897jO9a8VD7LJX83OUiF2Gw==", "ticker"=>""}
+Completed 500 Internal Server Error in 2408ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:07:38 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4Wc5qFOmhK2OvZ9QLq1Wcwy2b5Rbs+wGTCrzHkFAlsfRITaSKB9ZPgRHyd+XrVTNqMzR8Ckq6LPe8plaBgNYrA==", "ticker"=>" "}
+Completed 500 Internal Server Error in 2388ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:07:49 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4Wc5qFOmhK2OvZ9QLq1Wcwy2b5Rbs+wGTCrzHkFAlsfRITaSKB9ZPgRHyd+XrVTNqMzR8Ckq6LPe8plaBgNYrA==", "ticker"=>" "}
+Completed 500 Internal Server Error in 2468ms (ActiveRecord: 0.0ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): control characters are not allowed at line 1 column 1):
+  
+app/controllers/predictions_controller.rb:20:in `create'
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:12:11 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.5ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 239ms (Views: 225.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:12:12 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:12:13 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"XomWgJKPQTjswf5Xo97VUd7UfT1joOmHNVMrOywxDRBuz5m66Tacq2Y7qNga3tfveq7DWRE57TKni0F/a3LDew==", "ticker"=>""}
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2536ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:12:16 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:12:17 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:12:19 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:12:21 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"aNysQy2ilcv+VOy6aCLl8VKgkU1wnbE391qqHqaCwoZYmqN5VhtIWHSuujXRIudP9tovKQIEtYJlgsBa4cEM7Q==", "ticker"=>"aa"}
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2609ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:12:23 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:12:26 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mPrediction Load (1.4ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPrediction Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:21:15 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.4ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 289ms (Views: 273.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:21:18 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:21:22 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:21:27 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Aya60xXJ9LNU9QD3Wu6KgjcbEvgdxlvOhAIpcU9VHokzYLXpbnApIN4PVnjj7og8k2GsnG9fX3sW2kM1CBbQ4g==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:21:27 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:21:30 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:23:02 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:23:04 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:23:06 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"W8ubK71e79gXlIwApCY2wGKHCWEDoiWGz7kFro8gBTNrjZQRxucyS51u2o8dJjR+xv23BXE7ITNdYW/qyGPLWA==", "ticker"=>""}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", ""], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3728ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:23:09 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:23:12 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:23:15 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:23:18 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zFO/4pYyS1u6RKs9/5FnDzL1F51rWHR6j9WsrbZaEyj8FbDY7YuWyDC+/bJGkWWxlo+p+RnBcM8dDcbp8RndQw==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:23:18 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:23:20 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:29:46 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.4ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 37ms (Views: 31.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:29:49 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:29:54 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"P5d7Dnztj4N8xSMv6mOIRetsSdmP8JPFMW4yLF6uwv8P0XQ0B1RSEPY/daBTY4r7Txb3vf1pl3CjtlhoGe0MlA==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:29:54 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:30:10 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/predictions/7" for 127.0.0.1 at 2018-05-10 00:30:12 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:66
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/7" for 127.0.0.1 at 2018-05-10 00:31:22 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:66
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 24.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:31:56 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:31:58 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:32:02 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+lDOsiP1LJDsFV2kew+DdzWH3J2kw2MjHCehXgEAKf/KFsGIWEzxA2bvCyvCD4HJkf1i+dZaZ5aO/8saRkPnlA==", "ticker"=>"TSLA"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Completed 500 Internal Server Error in 48691ms (ActiveRecord: 0.2ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): did not find expected ',' or ']' while parsing a flow sequence at line 1 column 1):
+  
+app/controllers/predictions_controller.rb:23:in `create'
+Started GET "/predictions/" for 127.0.0.1 at 2018-05-10 00:33:30 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.5ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/predictions/1" for 127.0.0.1 at 2018-05-10 00:33:33 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:66
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/predictions/1" for 127.0.0.1 at 2018-05-10 00:33:36 -0700
+Processing by PredictionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A4e9VVPtU8pgT0Ht2Crpt/Gi7A1X9+B368+Fqp/4+vQzwbJvKFSOWeq1F2JhKusJVdhSaSVu5MJ5F+/u2Ls0nw==", "id"=>"1"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:54
+  [1m[36mPrediction Destroy (0.9ms)[0m  [1m[31mDELETE FROM "predictions" WHERE "predictions"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/predictions_controller.rb:54
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:54
+Redirected to http://localhost:3000/predictions
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:33:36 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.4ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:33:38 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:33:40 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WmQuj4dTomcvda4y19Ntxo4Og1gCQKF1QKG5ZmYHGe1qIiG1/Op/9KWP+L1u0294KnQ9PHDZpcDSedMiIUTXhg==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Completed 500 Internal Server Error in 59825ms (ActiveRecord: 0.2ms)
+
+
+  
+Psych::SyntaxError ((<unknown>): did not find expected ',' or ']' while parsing a flow sequence at line 1 column 1):
+  
+app/controllers/predictions_controller.rb:23:in `create'
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:36:03 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"XvaOSzKDdA7GNxxFHPkDJGqK9xrRFH0cIjMlGCJ/lEdusIFxSTqpnUzNSsql+QGazvBJfqONeamw609cZTxaLA==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:29
+  [1m[36mPrediction Create (0.7ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "AAPL"], ["model", "tree model"], ["confidence", 0.5813253012048193], ["result", 1], ["created_at", "2018-05-10 07:38:48.636304"], ["updated_at", "2018-05-10 07:38:48.636304"]]
+  ↳ app/controllers/predictions_controller.rb:29
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:29
+Redirected to http://localhost:3000/predictions/10
+Completed 302 Found in 165090ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/predictions/10" for 127.0.0.1 at 2018-05-10 00:38:48 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 256ms (Views: 246.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:38:56 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:38:59 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:39:02 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"9d21VJ/O+Iy3BRbLUx8krQm6St5QfQ66Xz8+rQJOcR3Fm7pu5HclHz3/QETqHyYTrcD0uiLkCg/N51TpRQ2/dg==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:39:02 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:39:04 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:39:06 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:39:11 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"VF1qIc1v+6SuF7R+/+jRp/95FoyaaXe6e20oHHZHTsRkG2UbttYmNyTt4vFG6NMZWwOo6Ojwcw/ptUJYMQSArw==", "ticker"=>"AMZN"}
+  [1m[36mPrediction Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AMZN"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:39:11 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:39:13 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:39:15 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:39:25 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:39:40 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tmxGJx2tR4NvKUu5XHJGSDuW82b1dYLyKmEtiQc4C2WGKkkdZhSaEOXTHTblckT2n+xNAofshke4uUfNQHvFDg==", "ticker"=>"TSLA"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:29
+  [1m[36mPrediction Create (0.4ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "TSLA"], ["model", "tree model"], ["confidence", 0.5694444444444444], ["result", 1], ["created_at", "2018-05-10 07:40:44.156731"], ["updated_at", "2018-05-10 07:40:44.156731"]]
+  ↳ app/controllers/predictions_controller.rb:29
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:29
+Redirected to http://localhost:3000/predictions/11
+Completed 302 Found in 63839ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/predictions/11" for 127.0.0.1 at 2018-05-10 00:40:44 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/predictions/11" for 127.0.0.1 at 2018-05-10 00:40:54 -0700
+Processing by PredictionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JyHH9/lJgbRrEedjq4APKWbypt2s0t10y2oDBCni3p0XZ8jNgvBcJ+HrsewSgA2XwogYud5L2cFZsmlAbqEQ9g==", "id"=>"11"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:55
+  [1m[36mPrediction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "predictions" WHERE "predictions"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/predictions_controller.rb:55
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:55
+Redirected to http://localhost:3000/predictions
+Completed 302 Found in 18ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:40:54 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:40:56 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:40:59 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"W6+0fcAPKwJxkhWE4qAL5agoCUyuiM/axO54G/dMqdRr6btHu7b2kftoQwtboAlbDFK3KNwRy29WNhJfsA9nvw==", "ticker"=>"TSLA"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "TSLA"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/predictions_controller.rb:29
+  [1m[36mPrediction Create (0.7ms)[0m  [1m[32mINSERT INTO "predictions" ("ticker", "model", "confidence", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ticker", "TSLA"], ["model", "tree model"], ["confidence", 0.5555555555555556], ["result", 1], ["created_at", "2018-05-10 07:41:46.414239"], ["updated_at", "2018-05-10 07:41:46.414239"]]
+  ↳ app/controllers/predictions_controller.rb:29
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/predictions_controller.rb:29
+Redirected to http://localhost:3000/predictions/12
+Completed 302 Found in 46901ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/predictions/12" for 127.0.0.1 at 2018-05-10 00:41:46 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:42:11 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.4ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 44ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:42:13 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:42:16 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5GnvGWt62WglaJywhWRWUashUHx4MXctujB7kdMwX9/UL+AjEMME+6+Syj88ZFTvD1vuGAqoc5go6BHVlHORtA==", "ticker"=>""}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", ""], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3008ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:42:19 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:42:25 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:42:26 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:42:33 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"9yLGmxl1mzQzRsyiK4chH1K08/U4m6xmcnCoAJWcghvHZMmhYsxGp7m8mi2ShyOh9s5NkUoCqNPgqMJE0t9McA==", "ticker"=>"AAPL"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:42:33 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:42:35 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/new" for 127.0.0.1 at 2018-05-10 00:42:43 -0700
+Processing by PredictionsController#new as HTML
+  Rendering predictions/new.html.erb within layouts/application
+  Rendered predictions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/predictions" for 127.0.0.1 at 2018-05-10 00:42:50 -0700
+Processing by PredictionsController#create as HTML
+  Parameters: {"authenticity_token"=>"VfCS/Ke/hnlUh4KuLZpSECm1MlmK3aZC0Kzp6FslZCBltp3G3AZb6t591CGUmlCujc+MPfhEovdCdIOsHGaqSw==", "ticker"=>"AAAA"}
+  [1m[36mPrediction Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "predictions" WHERE "predictions"."ticker" = ? LIMIT ?[0m  [["ticker", "AAAA"], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:16
+Redirected to http://localhost:3000/error
+Completed 302 Found in 2523ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/error" for 127.0.0.1 at 2018-05-10 00:42:52 -0700
+Processing by PredictionsController#error as HTML
+  Rendering predictions/error.html.erb within layouts/application
+  Rendered predictions/error.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:42:58 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:52:09 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.5ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/predictions/2" for 127.0.0.1 at 2018-05-10 00:52:10 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:52:12 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/6" for 127.0.0.1 at 2018-05-10 00:52:13 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPrediction Load (0.3ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:52:16 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/predictions/12" for 127.0.0.1 at 2018-05-10 00:52:17 -0700
+Processing by PredictionsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPrediction Load (0.1ms)[0m  [1m[34mSELECT  "predictions".* FROM "predictions" WHERE "predictions"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/predictions_controller.rb:67
+  Rendering predictions/show.html.erb within layouts/application
+  Rendered predictions/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/predictions" for 127.0.0.1 at 2018-05-10 00:52:18 -0700
+Processing by PredictionsController#index as HTML
+  Rendering predictions/index.html.erb within layouts/application
+  [1m[36mPrediction Load (0.2ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions"[0m
+  ↳ app/views/predictions/index.html.erb:2
+  Rendered predictions/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
