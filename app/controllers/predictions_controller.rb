@@ -14,7 +14,8 @@ class PredictionsController < ApplicationController
   def create
   	@ticker = params[:ticker]
     if (Prediction.exists?(ticker: @ticker))
-      redirect_to error_path_url
+      @prediction = Prediction.find_by ticker: @ticker
+      redirect_to prediction_path(@prediction)
     else
       result = %x[ipython alltogether.py #{@ticker}]
       arr = result.split("\n")
@@ -57,7 +58,7 @@ class PredictionsController < ApplicationController
   end 
 
   def error 
-    @error_message = "Error could be: 1. Company predicted before 2. Ticker invalid 3. Ticker not found. Please try again"
+    @error_message = "Ticker used is invalid or cannot be found in our database. Please try again"
   end
 
 

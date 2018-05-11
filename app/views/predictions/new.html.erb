@@ -1,7 +1,8 @@
 <h1>New prediction</h1>
 
 <br>
-<p class="form-prefix">Want to use ML to predict a company's stock annual growth rate for next year? Please enter a valid company ticker</p>
+<p class="form-prefix">Want to use ML to predict a company's stock annual growth rate for next year?</p>
+<p>Please enter a valid company ticker (ALL CAPITALIZED)</p>
 
 <form action="/predictions" method="POST" class="form-inline">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -13,3 +14,8 @@
     </span>
   </div>
 </form>
+
+<hr>
+<%= link_to predictions_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
