@@ -49,7 +49,7 @@ Go to browser and open http://localhost:3000/predictions/
 5. After running all the ML algorithms, it will print out the highest confidence score produced from all the algorithm. So in the above case, the highest confidence score for Delta is ~0.72 and the result is 1 (1 means stock annual growth rate will increase by 10% or more, -1 means stock annual growth rate will decrease by 10% or more, 0 is everything in between) 
 <img width="559" alt="screen shot 2018-09-07 at 5 15 47 pm" src="https://user-images.githubusercontent.com/36837456/45248636-80dd7300-b2c8-11e8-96a8-b0166f6a7efc.png">
 
-## Webapp *everything else work the same, but on a webapp with better UX
+## Webapp *everything works the same, but on a webapp with better UX
 Index page
 
 <img width="696" alt="screen shot 2018-09-07 at 5 33 20 pm" src="https://user-images.githubusercontent.com/36837456/45248642-99e62400-b2c8-11e8-9b7b-b0a788309a5a.png">
