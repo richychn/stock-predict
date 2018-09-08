@@ -22,7 +22,7 @@ Then everything will be taken care of in the terminal
 Last line printed is the result *in array form, [best ml model, confidence score, result in categories] 
 Result categories: 1(10%growth or more) 0(price stay the same) -1(-10%growth or less)
 
-## Webapp -- Rails branch
+## Webapp -- Rails branch 
 This branch of the the project is a ruby on rails application (without DB) that uses the above python backend. It includes all the fundamental rails files as well as a modified version of the python backend file shown in form one. 
 
 Files Included:
