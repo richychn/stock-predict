@@ -48,12 +48,13 @@ Go to browser and open http://localhost:3000/predictions/
 <img width="549" alt="screen shot 2018-09-07 at 5 14 31 pm" src="https://user-images.githubusercontent.com/36837456/45248603-dfeeb800-b2c7-11e8-87f5-86d14fbcbe99.png">
 5. After running all the ML algorithms, it will print out the highest confidence score produced from all the algorithm. So in the above case, the highest confidence score for Delta is ~0.72 and the result is 1 (1 means stock annual growth rate will increase by 10% or more, -1 means stock annual growth rate will decrease by 10% or more, 0 is everything in between) 
 <img width="559" alt="screen shot 2018-09-07 at 5 15 47 pm" src="https://user-images.githubusercontent.com/36837456/45248636-80dd7300-b2c8-11e8-96a8-b0166f6a7efc.png">
-## WebApp: *everything else work the same, but on a webapp with better UX
-# Index Page
+
+## Webapp *everything else work the same, but on a webapp with better UX
+
 <img width="696" alt="screen shot 2018-09-07 at 5 33 20 pm" src="https://user-images.githubusercontent.com/36837456/45248642-99e62400-b2c8-11e8-9b7b-b0a788309a5a.png">
-# Create New Page
+
 <img width="829" alt="screen shot 2018-09-07 at 5 33 51 pm" src="https://user-images.githubusercontent.com/36837456/45248646-b1bda800-b2c8-11e8-9cdb-d2eb9455916c.png">
-# show page
+
 <img width="643" alt="screen shot 2018-09-07 at 5 34 07 pm" src="https://user-images.githubusercontent.com/36837456/45248654-bc783d00-b2c8-11e8-8480-f985ec8ba19a.png"> 
  
 
