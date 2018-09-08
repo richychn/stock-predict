@@ -39,7 +39,7 @@ Go to browser and open http://localhost:3000/predictions/
 # RESULTS
 ## Python Backend
 1. Start Ipython
-
+<img width="546" alt="screen shot 2018-09-07 at 5 12 53 pm" src="https://user-images.githubusercontent.com/36837456/45248545-fd6f5200-b2c6-11e8-8b3e-91dc8d2e78f9.png">
 2. Run alltogether.py and the alltogether(), then the terminal will promote you to type in the symbol of the company you like to predict. For example I chose Delta Airline above
 
 3. The program will start to print out a lot of things, indicating that the program is running correctly. Note the first line says “Transportation.” This means that we have found Delta to be apart of Transportation Industry and thus will use all transportation companies’s data for prediction. The list here following it are just features 
